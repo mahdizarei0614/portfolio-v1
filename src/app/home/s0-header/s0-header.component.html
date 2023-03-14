@@ -1,0 +1,12 @@
+<header class="ease-in-out duration-300 z-[100] fixed w-full h-[74px]" [class.header-scrolled]="scrolled">
+  <div class="container flex h-full mx-auto">
+    <img class="p-4 h-full cursor-pointer mix-blend-color" src="assets/logo.svg" alt="" (click)="scroll('landing')"/>
+    <nav class="mix-blend-difference bg-transparent lg:flex py-3 px-0 h-full flex" role="navigation">
+      <ul class="flex items-center list-unstyled p-0 h-full">
+        <li *ngFor="let item of menuItems" class="mx-4">
+          <a class="text-lg" href="javascript:void(0)" (click)="scroll(item.key)">{{item.label}}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
