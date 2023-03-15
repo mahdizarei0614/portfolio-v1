@@ -13,7 +13,7 @@ export class S0HeaderComponent implements OnInit {
       label: 'Biography'
     },
     {
-      key: 'Experience',
+      key: 'experience',
       label: 'Experience'
     },
     {

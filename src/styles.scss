@@ -8,6 +8,17 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
+}
+
+.translucent {
+  -webkit-backdrop-filter: blur(32px);
+  backdrop-filter: blur(32px);
+}
+
+.translucent-min {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
