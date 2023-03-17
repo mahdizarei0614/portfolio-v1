@@ -6,55 +6,75 @@ import {Component} from '@angular/core';
   styleUrls: ['./s1-landing.component.scss']
 })
 export class S1LandingComponent {
+  rainbow: number[] = [];
   public myName = [
     {
-      binary: '01001101',
       letter: 'M',
-      hovered: false
+      color: 'unset'
     },
     {
-      binary: '01000001',
-      letter: 'A',
-      hovered: false
+      letter: 'a',
+      color: 'unset'
     },
     {
-      binary: '01001000',
-      letter: 'H',
-      hovered: false
+      letter: 'h',
+      color: 'unset'
     },
     {
-      binary: '01000100',
-      letter: 'D',
-      hovered: false
+      letter: 'd',
+      color: 'unset'
     },
     {
-      binary: '01001001',
-      letter: 'I',
-      hovered: false
+      letter: 'i',
+      color: 'unset'
     },
     {
-      binary: '01011010',
+      letter: '&nbsp;',
+      color: 'unset'
+    },
+    {
       letter: 'Z',
-      hovered: false
+      color: 'unset'
     },
     {
-      binary: '01000001',
-      letter: 'A',
-      hovered: false
+      letter: 'a',
+      color: 'unset'
     },
     {
-      binary: '01010010',
-      letter: 'R',
-      hovered: false
+      letter: 'r',
+      color: 'unset'
     },
     {
-      binary: '01000101',
-      letter: 'E',
-      hovered: false
+      letter: 'e',
+      color: 'unset'
     },
     {
-      binary: '01001001',
-      letter: 'I',
-      hovered: false
+      letter: 'i',
+      color: 'unset'
     }];
+
+  randColor(index: number, on = true) {
+    if (on) {
+      this.rainbow.push(0);
+      this.myName[index].color = '#' + this.getCode();
+    } else {
+      this.rainbow.pop();
+      setTimeout(() => {
+        this.myName[index].color = 'unset';
+      }, 300);
+    }
+  }
+
+  getCode() {
+    let code = '';
+    for (let i = 0; i < 6; i++) {
+      code += this.getOneChar();
+    }
+    return code;
+  }
+
+  getOneChar() {
+    const letters = ['4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd'];
+    return letters[Math.floor(Math.random() * 10)]
+  }
 }
