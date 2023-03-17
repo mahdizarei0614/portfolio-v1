@@ -5,7 +5,7 @@
     <nav class="bg-transparent lg:flex py-3 px-0 h-full flex" role="navigation">
       <ul class="flex items-center list-unstyled p-0 h-full">
         <li *ngFor="let item of menuItems" class="mx-4">
-          <a class="text-lg text-slate-800" href="javascript:void(0)" (click)="scroll(item.key)">{{item.label}}</a>
+          <a class="text-lg text-slate-800 hover:text-slate-600" href="javascript:void(0)" (click)="scroll(item.key)">{{item.label}}</a>
         </li>
       </ul>
     </nav>
