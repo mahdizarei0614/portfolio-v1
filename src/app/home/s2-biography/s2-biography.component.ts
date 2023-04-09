@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-s2-biography',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./s2-biography.component.scss']
 })
 export class S2BiographyComponent {
-
+  @Input() activated = false;
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {getWindow} from "../../app.component";
 
 @Component({
@@ -6,7 +6,8 @@ import {getWindow} from "../../app.component";
   templateUrl: './s0-header.component.html',
   styleUrls: ['./s0-header.component.scss']
 })
-export class S0HeaderComponent implements OnInit {
+export class S0HeaderComponent {
+  @Output() slide = new EventEmitter();
   menuItems = [
     {
       key: 'biography',
@@ -17,11 +18,11 @@ export class S0HeaderComponent implements OnInit {
       label: 'Experience'
     },
     {
-      key: 'Education',
+      key: 'education',
       label: 'Education'
     },
     {
-      key: 'Skills',
+      key: 'skills',
       label: 'Skills'
     },
     {
@@ -29,13 +30,6 @@ export class S0HeaderComponent implements OnInit {
       label: 'Languages'
     },
   ];
-  public scrolled = false;
-
-  ngOnInit() {
-    getWindow()?.addEventListener('scroll', () => {
-      this.scrolled = (getWindow()?.document?.scrollingElement?.scrollTop as number) > 0;
-    });
-  }
 
   public scroll(elementId: string) {
     getWindow()?.document.getElementById(elementId)?.scrollIntoView();

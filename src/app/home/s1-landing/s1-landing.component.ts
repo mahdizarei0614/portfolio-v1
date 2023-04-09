@@ -51,7 +51,8 @@ export class S1LandingComponent {
     {
       letter: 'i',
       color: 'unset'
-    }];
+    }
+  ];
 
   randColor(index: number, on = true) {
     if (on) {

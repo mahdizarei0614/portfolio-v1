@@ -1,0 +1,16 @@
+<div #container class="absolute ease-in-out duration-1000 z-[1] h-full w-full mx-auto pt-20 lg:pt-32 px-6 md:px-24 ocean"
+     [ngClass]="activated ? 'top-0' : 'top-full'">
+  <div id="skills" class="absolute -top-[200vh] h-0 w-0"></div>
+  <h2 class="text-5xl md:text-7xl sm:text-6xl whitespace-nowrap text-white">Skills</h2>
+  <div class="bubbles">
+    <span *ngFor="let skill of skills"
+          [ngClass]="skill.level === 5 ? 'expert font-extrabold' :
+          skill.level === 4 ? 'advanced font-bold' :
+          skill.level === 3 ? 'skilled' :
+          skill.level === 2 ? 'newbie font-thin' : ''"
+          [ngStyle]="{left: skill.left, animationDelay: skill.delay, animationDuration: skill.duration}"
+          class="flex items-center justify-center text-white bg-white/[.5] backdrop-blur-sm">
+      {{skill.label}}
+    </span>
+  </div>
+</div>
