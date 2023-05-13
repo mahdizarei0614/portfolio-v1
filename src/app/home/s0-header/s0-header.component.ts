@@ -10,6 +10,10 @@ export class S0HeaderComponent {
   @Output() slide = new EventEmitter();
   menuItems = [
     {
+      key: 'landing',
+      label: 'Summery'
+    },
+    {
       key: 'biography',
       label: 'Biography'
     },
@@ -17,18 +21,22 @@ export class S0HeaderComponent {
       key: 'experience',
       label: 'Experience'
     },
-    {
-      key: 'education',
-      label: 'Education'
-    },
+    // {
+    //   key: 'education',
+    //   label: 'Education'
+    // },
     {
       key: 'skills',
       label: 'Skills'
     },
     {
-      key: 'Languages',
-      label: 'Languages'
+      key: 'certifications',
+      label: 'Certifications'
     },
+    // {
+    //   key: 'Languages',
+    //   label: 'Languages'
+    // },
   ];
 
   public scroll(elementId: string) {

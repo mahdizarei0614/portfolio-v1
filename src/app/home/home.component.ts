@@ -16,12 +16,16 @@ export class HomeComponent implements OnInit {
       id: 'experience',
       activated: false
     },
+    // {
+    //   id: 'education',
+    //   activated: false
+    // },
     {
-      id: 'education',
+      id: 'skills',
       activated: false
     },
     {
-      id: 'skills',
+      id: 'certifications',
       activated: false
     }
   ];

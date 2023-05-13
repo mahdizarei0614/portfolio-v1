@@ -3,10 +3,10 @@
     <img class="py-4 pr-4 pl-1.5 h-full cursor-pointer" src="assets/logo.svg" alt=""
          (click)="slide.emit('landing')"/>
     <div class="flex lg:order-2">
-      <button type="button"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 lg:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-        Buy me a coffee
-      </button>
+<!--      <button type="button"-->
+<!--              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 lg:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">-->
+<!--        Buy me a coffee-->
+<!--      </button>-->
       <button #menuButton data-collapse-toggle="navbar-cta" type="button"
               class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-cta" aria-expanded="false">
@@ -23,7 +23,7 @@
     <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-cta">
       <ul
         class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-white/[.5] lg:backdrop-blur-none backdrop-blur-md lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent">
-        <li *ngFor="let item of menuItems" class="mx-4">
+        <li *ngFor="let item of menuItems" class="!mx-4">
           <a class="text-lg block py-2 text-slate-800 hover:text-slate-600" href="javascript:void(0)"
              (click)="slide.emit(item.key); menuButton.click()">{{item.label}}</a>
         </li>

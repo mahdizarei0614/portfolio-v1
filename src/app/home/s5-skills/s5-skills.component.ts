@@ -16,6 +16,7 @@ export class S5SkillsComponent implements OnInit {
     {label: 'HTML & CSS', level: 5, left: '', delay: '', duration: ''},
     {label: 'Bootstrap', level: 5, left: '', delay: '', duration: ''},
     {label: 'JavaScript', level: 4, left: '', delay: '', duration: ''},
+    {label: 'Nx', level: 4, left: '', delay: '', duration: ''},
     {label: 'Git', level: 4, left: '', delay: '', duration: ''},
     {label: 'Sass & Less', level: 4, left: '', delay: '', duration: ''},
     {label: 'Tailwind', level: 4, left: '', delay: '', duration: ''},
