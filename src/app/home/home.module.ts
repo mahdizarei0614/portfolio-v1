@@ -9,6 +9,7 @@ import {S3ExperienceComponent} from './s3-experience/s3-experience.component';
 import {S4EducationComponent} from './s4-education/s4-education.component';
 import {S5SkillsComponent} from './s5-skills/s5-skills.component';
 import {S6CertificationsComponent} from './s6-certifications/s6-certifications.component';
+import { CertificationItemComponent } from './s6-certifications/certification-item/certification-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {S6CertificationsComponent} from './s6-certifications/s6-certifications.c
     S3ExperienceComponent,
     S4EducationComponent,
     S5SkillsComponent,
-    S6CertificationsComponent
+    S6CertificationsComponent,
+    CertificationItemComponent
   ],
   imports: [
     CommonModule,

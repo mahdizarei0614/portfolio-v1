@@ -1,9 +1,7 @@
-<div class="h-[100vh]" (swipedown)="slide('perv')" (swipeup)="slide('next')">
-  <app-s0-header (slide)="slide($event)"></app-s0-header>
-  <app-s1-landing></app-s1-landing>
-  <app-s2-biography [activated]="isActivated(0)"></app-s2-biography>
-  <app-s3-experience [activated]="isActivated(1)"></app-s3-experience>
+<app-s0-header></app-s0-header>
+<app-s1-landing></app-s1-landing>
+<app-s2-biography></app-s2-biography>
+<app-s3-experience></app-s3-experience>
 <!--  <app-s4-education [activated]="isActivated(2)"></app-s4-education>-->
-  <app-s5-skills [activated]="isActivated(2)"></app-s5-skills>
-  <app-s6-certifications [activated]="isActivated(3)"></app-s6-certifications>
-</div>
+<app-s5-skills></app-s5-skills>
+<app-s6-certifications></app-s6-certifications>

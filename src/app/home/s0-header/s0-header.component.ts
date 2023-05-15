@@ -10,10 +10,6 @@ export class S0HeaderComponent {
   @Output() slide = new EventEmitter();
   menuItems = [
     {
-      key: 'landing',
-      label: 'Summery'
-    },
-    {
       key: 'biography',
       label: 'Biography'
     },
@@ -39,7 +35,7 @@ export class S0HeaderComponent {
     // },
   ];
 
-  public scroll(elementId: string) {
-    getWindow()?.document.getElementById(elementId)?.scrollIntoView();
+  goTop() {
+    getWindow()?.scrollTo({top: 0});
   }
 }

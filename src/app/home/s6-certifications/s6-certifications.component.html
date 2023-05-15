@@ -1,19 +1,9 @@
-<div #container class="absolute ease-in-out duration-1000 z-[1] h-full w-full mx-auto pt-20 lg:pt-32 px-6 md:px-24 bg-slate-800/[0.35] backdrop-blur-xl"
+<div id="certifications" class="h-[100vh] w-full mx-auto pt-20 lg:pt-32 px-6 md:px-24 bg-slate-800/[0.35] backdrop-blur-xl"
      [ngClass]="activated ? 'top-0' : 'top-full'">
-  <div id="certifications" class="absolute -top-[200vh] h-0 w-0"></div>
-  <div class="flex flex-col h-full">
-    <div class="flex flex-wrap">
-      <h2 class="text-5xl md:text-7xl sm:text-6xl whitespace-nowrap text-white flex-shrink-0 flex-grow-0">Certification</h2>
-      <div class="flex justify-center items-center flex-shrink flex-grow flex-nowrap pt-4 md:pt-0">
-        <div class="mx-2 relative" *ngFor="let cert of certifications">
-          <div *ngIf="selectedCert?.title === cert.title" class="w-2 h-2 absolute -bottom-4 left-1/2 transform -translate-x-1/2 translate-y-1/2 bg-green-400 rounded"></div>
-          <img class="h-12 w-12" src="assets/images/{{cert.icon}}" (click)="openCert(cert)">
-        </div>
-      </div>
-    </div>
-    <div *ngIf="selectedCert" class="flex-grow w-full flex flex-col items-center justify-start md:justify-center">
-      <img src="assets/images/{{selectedCert.cert}}" class="w-full lg:w-1/2 md:w-3/4 mt-16 md:mt-0">
-      <a class="mt-4 text-green-400" target="_blank" [href]="selectedCert.link">Visit Website</a>
+  <h2 class="text-5xl md:text-7xl sm:text-6xl whitespace-nowrap text-white">Certification</h2>
+  <div class="flex w-full flex-wrap">
+    <div class="mx-2 relative w-[300px] h-[250px]" *ngFor="let cert of certifications">
+      <app-certification-item [certification]="cert"></app-certification-item>
     </div>
   </div>
 </div>

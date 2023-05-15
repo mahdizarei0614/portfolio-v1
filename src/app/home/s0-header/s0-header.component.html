@@ -1,7 +1,8 @@
 <nav class="ease-in-out duration-300 z-[100] fixed top-0 w-full h-[74px]">
   <div class="flex flex-wrap items-center h-full justify-between mx-auto px-6 lg:px-24">
-    <img class="py-4 pr-4 pl-1.5 h-full cursor-pointer" src="assets/logo.svg" alt=""
-         (click)="slide.emit('landing')"/>
+    <a class="py-4 pr-4 pl-1.5 h-full cursor-pointer" (click)="goTop()">
+      <img class="w-full h-full" src="assets/logo.svg" alt=""/>
+    </a>
     <div class="flex lg:order-2">
 <!--      <button type="button"-->
 <!--              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 lg:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">-->
@@ -23,9 +24,11 @@
     <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-cta">
       <ul
         class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-white/[.5] lg:backdrop-blur-none backdrop-blur-md lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent">
+        <li class="!mx-4">
+          <a class="text-lg block py-2 text-slate-800 hover:text-slate-600" (click)="goTop()">Summery</a>
+        </li>
         <li *ngFor="let item of menuItems" class="!mx-4">
-          <a class="text-lg block py-2 text-slate-800 hover:text-slate-600" href="javascript:void(0)"
-             (click)="slide.emit(item.key); menuButton.click()">{{item.label}}</a>
+          <a class="text-lg block py-2 text-slate-800 hover:text-slate-600" href="#{{item.key}}">{{item.label}}</a>
         </li>
       </ul>
     </div>

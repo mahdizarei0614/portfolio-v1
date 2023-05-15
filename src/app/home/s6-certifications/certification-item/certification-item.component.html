@@ -1,0 +1,6 @@
+<div class="rounded p-2">
+  <div class="relative w-full">
+    <div class="absolute w-full top-0 right-0 transition {{loaded ? 'opacity-none' : ''}}" id="blur-hash-{{certification.id}}"></div>
+    <img src="assets/images/{{certification.cert}}" (load)="loaded = true;">
+  </div>
+</div>

@@ -1,12 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {getWindow} from "../app.component";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   public slides: SlideModel[] = [
     {
       id: 'biography',
@@ -29,51 +28,6 @@ export class HomeComponent implements OnInit {
       activated: false
     }
   ];
-
-  ngOnInit() {
-    (getWindow() as Window)?.addEventListener('wheel', (event) => {
-      if (event.deltaY > 0) {
-        this.slide('next')
-      } else {
-        this.slide('perv')
-      }
-    });
-  }
-
-  slide(key: string) {
-    const foundIndex = this.slides.findIndex((s) => s.activated);
-    switch (key) {
-      case 'next': {
-        const nextSlide = this.slides[foundIndex + 1];
-        if (nextSlide) {
-          this.slide(nextSlide.id)
-        } else {
-          this.slide(this.slides[foundIndex].id)
-        }
-        break;
-      }
-      case 'perv': {
-        const nextSlide = this.slides[foundIndex - 1];
-        if (nextSlide) {
-          this.slide(nextSlide.id)
-        } else {
-          this.slide('landing')
-        }
-        break;
-      }
-      default: {
-        this.slides.map((s) => s.activated = false);
-        const nextSlide = this.slides.find((s) => s.id === key);
-        if (nextSlide) {
-          nextSlide.activated = true;
-        }
-      }
-    }
-  }
-
-  isActivated(index: number) {
-    return index <= this.slides.findIndex((s) => s.activated);
-  }
 }
 
 declare type SlideModel = {
