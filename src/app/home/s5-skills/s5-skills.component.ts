@@ -29,7 +29,7 @@ export class S5SkillsComponent implements OnInit {
 
   ngOnInit() {
     this.skills.forEach((s) => {
-      s.left = Math.floor((Math.random() * ((getWindow() as Window).innerWidth - 200)) + 50) + 'px';
+      s.left = Math.floor((Math.random() * ((getWindow() as Window).innerWidth - 300)) + 50) + 'px';
       s.delay = (Math.random() * 7 + 3) + 's';
       s.duration = (Math.random() * 15 + 5) + 's';
     })

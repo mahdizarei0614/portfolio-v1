@@ -12,7 +12,9 @@ export class S6CertificationsComponent {
   certifications: Certificate[] = [
     {
       id: 'angular_basic',
-      title: 'Angular (Basic) Certificate',
+      title: 'Angular (Basic)',
+      issuer: 'HackerRank',
+      tags: ['Angular', 'TypeScript'],
       icon: 'angular.svg',
       link: 'https://www.hackerrank.com/certificates/4029878be43b',
       cert: 'angular_basic.jpg',
@@ -20,7 +22,9 @@ export class S6CertificationsComponent {
     },
     {
       id: 'angular_intermediate',
-      title: 'Angular (Intermediate) Certificate',
+      title: 'Angular (Intermediate)',
+      issuer: 'HackerRank',
+      tags: ['Angular', 'TypeScript'],
       icon: 'angular.svg',
       link: 'https://www.hackerrank.com/certificates/759868e0e7a9',
       cert: 'angular_intermediate.jpg',
@@ -28,7 +32,9 @@ export class S6CertificationsComponent {
     },
     {
       id: 'javascript_basic',
-      title: 'JavaScript (Basic) Certificate',
+      title: 'JavaScript (Basic)',
+      issuer: 'HackerRank',
+      tags: ['JavaScript'],
       icon: 'javascript.svg',
       link: 'https://www.hackerrank.com/certificates/66e359735047',
       cert: 'javascript_basic.jpg',
@@ -36,7 +42,9 @@ export class S6CertificationsComponent {
     },
     {
       id: 'problem_solving_basic',
-      title: 'Problem Solving (Basic) Certificate',
+      title: 'Problem Solving (Basic)',
+      issuer: 'HackerRank',
+      tags: ['JavaScript', 'Algorithms'],
       icon: 'problem.svg',
       link: 'https://www.hackerrank.com/certificates/a492c627f960',
       cert: 'problem_solving_basic.jpg',
@@ -52,6 +60,8 @@ export class S6CertificationsComponent {
 export type Certificate = {
   id: string,
   title: string,
+  issuer: string,
+  tags: string[],
   icon: string,
   link: string,
   cert: string,
