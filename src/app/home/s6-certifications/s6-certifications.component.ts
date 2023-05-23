@@ -6,7 +6,6 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./s6-certifications.component.scss']
 })
 export class S6CertificationsComponent {
-  @Input() activated = false;
   selectedCert: Certificate | null = null;
 
   certifications: Certificate[] = [

@@ -10,6 +10,8 @@ import {S4EducationComponent} from './s4-education/s4-education.component';
 import {S5SkillsComponent} from './s5-skills/s5-skills.component';
 import {S6CertificationsComponent} from './s6-certifications/s6-certifications.component';
 import { CertificationItemComponent } from './s6-certifications/certification-item/certification-item.component';
+import { Sx0CasinoComponent } from './sx0-casino/sx0-casino.component';
+import { MinesweeperComponent } from './sx0-casino/components/minesweeper/minesweeper.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CertificationItemComponent } from './s6-certifications/certification-it
     S4EducationComponent,
     S5SkillsComponent,
     S6CertificationsComponent,
-    CertificationItemComponent
+    CertificationItemComponent,
+    Sx0CasinoComponent,
+    MinesweeperComponent
   ],
   imports: [
     CommonModule,
