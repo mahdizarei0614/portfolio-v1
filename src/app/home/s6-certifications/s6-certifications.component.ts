@@ -49,6 +49,28 @@ export class S6CertificationsComponent {
       cert: 'problem_solving_basic.jpg',
       blurHash: 'L8QTcM}y5$$uoyj?t7j@0Jx9i{bJ'
     },
+    {
+      id: 'typescript_quera',
+      title: 'Task-Oriented Course In Development With Typescript',
+      issuer: 'Quera',
+      tags: ['TypeScript', 'Angular'],
+      icon: 'problem.svg',
+      link: 'https://quera.org/media/public/quera_certificate/c02e77c89fe042f19a3af991b500b75a.jpg',
+      cert: 'typescript_quera.jpg',
+      blurHash: 'L1M7x}D%01?c00-pERIV00Rj?way',
+      marquee: true
+    },
+    {
+      id: 'git_quera',
+      title: 'Task-Oriented Course In Version Control With Git',
+      issuer: 'Quera',
+      tags: ['Git'],
+      icon: 'problem.svg',
+      link: 'https://quera.org/media/public/quera_certificate/8c0a2117f8024df28954884ead8601b6.jpg',
+      cert: 'git_quera.jpg',
+      blurHash: 'L1M7x}D%01?c00-pERIV00Rj?way',
+      marquee: true
+    },
   ];
 
   openCert(cert: Certificate) {
@@ -65,4 +87,5 @@ export type Certificate = {
   link: string,
   cert: string,
   blurHash: string,
+  marquee?: boolean,
 }
