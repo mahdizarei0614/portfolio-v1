@@ -1,11 +1,11 @@
 .bg-special {
-  background-color:rgba(#99fff1, .6);
+  background-color:rgba(#99fff1, 0);
   background-image:
-    radial-gradient(at 73% 37%, hsla(184,90%,72%,.2) 0px, transparent 50%),
-    radial-gradient(at 5% 65%, hsla(251,83%,78%,.2) 0px, transparent 50%),
-    radial-gradient(at 39% 7%, hsla(65,67%,77%,.2) 0px, transparent 50%),
-    radial-gradient(at 74% 47%, hsla(192,93%,66%,.2) 0px, transparent 50%),
-    radial-gradient(at 86% 36%, hsla(231,85%,65%,.2) 0px, transparent 50%),
-    radial-gradient(at 30% 7%, hsla(237,84%,64%,.2) 0px, transparent 50%),
-    radial-gradient(at 77% 31%, hsla(119,77%,78%,.2) 0px, transparent 50%);
+    radial-gradient(at 73% 37%, hsla(184,90%,72%,.6) 0px, transparent 50%),
+    radial-gradient(at 5% 65%, hsla(251,83%,78%,.7) 0px, transparent 50%),
+    radial-gradient(at 39% 7%, hsla(65,67%,77%,.7) 0px, transparent 50%),
+    radial-gradient(at 74% 80%, hsla(192,93%,66%,.6) 0px, transparent 50%),
+    radial-gradient(at 86% 36%, hsla(231,85%,65%,.4) 0px, transparent 50%),
+    radial-gradient(at 30% 7%, hsla(237,84%,64%,.7) 0px, transparent 50%),
+    radial-gradient(at 77% 31%, hsla(119,77%,78%,.4) 0px, transparent 50%);
 }
