@@ -29,6 +29,10 @@ export class S0HeaderComponent {
       key: 'certifications',
       label: 'Certifications'
     },
+    {
+      key: 'games',
+      label: 'Mini Games'
+    },
     // {
     //   key: 'Languages',
     //   label: 'Languages'
