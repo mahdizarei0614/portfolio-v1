@@ -10,11 +10,11 @@ export class MinesweeperComponent implements AfterViewInit {
   field: any = [];
   gameOver = false;
   totalBombs = 10;
-  clickFunction = (e: any) => {
+  clickFunction = (e: Event) => {
     this.reveal(e);
   }
 
-  auxClickFunction = (e: any) => {
+  auxClickFunction = (e: Event) => {
     e.preventDefault();
     this.flag(e);
   }
@@ -142,17 +142,14 @@ export class MinesweeperComponent implements AfterViewInit {
     }
   }
 
-  flag(el: any) {
+  flag(el: Event) {
     if (this.gameOver) {
       this.startGame();
       return;
     }
-    let id;
-    if (el.srcElement.id) {
-      id = el.srcElement.id;
-    } else {
-      id = el.srcElement.parentElement.id;
-    }
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const id = el.srcElement?.id ? el.srcElement.id : el.srcElement?.parentElement?.id;
     let [, row, cell] =  id.split('-');
     row = parseInt(row, 10);
     cell = parseInt(cell, 10);
@@ -161,15 +158,15 @@ export class MinesweeperComponent implements AfterViewInit {
     }
     if (!this.field[row][cell].flag) {
       this.field[row][cell].flag = true;
-      document.getElementById(`cell-${row}-${cell}`)!.innerHTML = '<img class="bomb" src="assets/images/flag.svg" alt="F" />';
+      (document.getElementById(`cell-${row}-${cell}`) as HTMLElement).innerHTML = '<img class="bomb" src="assets/images/flag.svg" alt="F" />';
     } else {
       this.field[row][cell].flag = false;
-      document.getElementById(`cell-${row}-${cell}`)!.innerHTML = '';
+      (document.getElementById(`cell-${row}-${cell}`) as HTMLElement).innerHTML = '';
     }
   }
 
-  defuseCell(row: any, cell: any) {
-    const element: any = document.getElementById(`cell-${row}-${cell}`);
+  defuseCell(row: number, cell: number) {
+    const element = document.getElementById(`cell-${row}-${cell}`) as HTMLElement;
     const numOfBombs = this.field[row][cell].numOfBombsAround;
     this.field[row][cell].revealed = true;
     element.innerHTML = numOfBombs;
@@ -203,11 +200,11 @@ export class MinesweeperComponent implements AfterViewInit {
     for (let i = 0; i < this.field.length; i++) {
       for (let j = 0; j < this.field[0].length; j++) {
         if (!this.field[i][j].bomb) {
-          const cell: any = document.getElementById(`cell-${i}-${j}`);
+          const cell = (document.getElementById(`cell-${i}-${j}`) as HTMLElement);
           cell.innerHTML = this.field[i][j].numOfBombsAround;
         } else {
           if (!this.field[i][j].flag) {
-            document.getElementById(`cell-${i}-${j}`)!.innerHTML = '<img class="bomb" src="assets/images/bomb.svg" alt="B" />';
+            (document.getElementById(`cell-${i}-${j}`) as HTMLElement).innerHTML = '<img class="bomb" src="assets/images/bomb.svg" alt="B" />';
           }
         }
       }

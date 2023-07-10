@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, Output} from '@angular/core';
 import {getWindow} from "../../app.component";
 
 @Component({
@@ -7,7 +7,12 @@ import {getWindow} from "../../app.component";
   styleUrls: ['./s0-header.component.scss']
 })
 export class S0HeaderComponent {
+  @HostListener('window:scroll', ['$event']) onScroll(event: any) {
+    this.isScrolled();
+  }
   @Output() slide = new EventEmitter();
+  scrollTop = 0;
+  scrollTopActivated = -1;
   menuItems = [
     {
       key: 'biography',
@@ -29,10 +34,10 @@ export class S0HeaderComponent {
       key: 'certifications',
       label: 'Certifications'
     },
-    {
-      key: 'games',
-      label: 'Mini Games'
-    },
+    // {
+    //   key: 'games',
+    //   label: 'Mini Games'
+    // },
     // {
     //   key: 'Languages',
     //   label: 'Languages'
@@ -42,4 +47,11 @@ export class S0HeaderComponent {
   goTop() {
     getWindow()?.scrollTo({top: 0});
   }
+
+  isScrolled() {
+    this.scrollTop = (getWindow()?.document.getElementById('identifier')?.getBoundingClientRect().top as number);
+    this.scrollTopActivated = Math.floor(-1 * this.scrollTop / getWindow()!.innerHeight);
+  }
+
+  public readonly getWindow = getWindow;
 }
