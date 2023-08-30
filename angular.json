@@ -38,6 +38,7 @@
           },
           "configurations": {
             "production": {
+              "outputPath": "dist/mahdi-zarei-portfolio/production",
               "budgets": [
                 {
                   "type": "initial",
@@ -51,6 +52,28 @@
                 }
               ],
               "outputHashing": "all"
+            },
+            "ompfinex": {
+              "outputPath": "dist/mahdi-zarei-portfolio/ompfinex",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/app/app-routing.module.ts",
+                  "with": "src/app/app-routing-ompfinex.module.ts"
+                }
+              ]
             },
             "development": {
               "buildOptimizer": false,
@@ -71,6 +94,9 @@
             },
             "development": {
               "browserTarget": "mahdi-zarei-portfolio:build:development"
+            },
+            "ompfinex": {
+              "browserTarget": "mahdi-zarei-portfolio:build:ompfinex"
             }
           },
           "defaultConfiguration": "development"

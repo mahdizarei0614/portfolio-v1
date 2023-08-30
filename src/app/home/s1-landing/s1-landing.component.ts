@@ -1,11 +1,28 @@
 import {Component} from '@angular/core';
+import {animate, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-s1-landing',
   templateUrl: './s1-landing.component.html',
-  styleUrls: ['./s1-landing.component.scss']
+  styleUrls: ['./s1-landing.component.scss'],
+  animations: [
+    trigger(
+      'inOutAnimation',
+      [
+        transition(
+          ':leave',
+          [
+            style({opacity: 1}),
+            animate('.3s ease-out',
+              style({opacity: 0}))
+          ]
+        )
+      ]
+    )
+  ]
 })
 export class S1LandingComponent {
+  loaded = false;
   rainbow: number[] = [];
   public myName = [
     {

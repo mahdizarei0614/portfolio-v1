@@ -1,12 +1,14 @@
 <div id="landing" class="sticky top-0 mesh-bg w-full h-[100vh] flex mx-auto pt-20 md:pt-0 px-6 md:px-24 items-start justify-center md:items-center md:justify-start z-0">
-  <img class="z-[1] absolute right-1/2 md:right-0 transform translate-x-1/2 md:translate-x-0 bottom-0 max-w-[500px] md:max-w-full w-full md:w-auto md:h-3/6 lg:h-4/6 xl:h-5/6" src="assets/image.png"
-       alt=""/>
+  <div class="z-[1] absolute right-1/2 md:right-0 transform translate-x-1/2 md:translate-x-0 bottom-0 max-w-[500px] md:max-w-full w-full md:w-auto md:h-3/6 lg:h-4/6 xl:h-5/6">
+    <img (load)="loaded = true" class="z-[1] w-full h-full" src="assets/image.png" alt="Mahdi Zarei"/>
+    <img *ngIf="!loaded" [@inOutAnimation] class="absolute scale-[1.1] top-0 right-0 z-[2] w-full h-full" src="assets/image-blur.png" alt="Mahdi Zarei">
+  </div>
   <div class="z-[2] pt-12 md:pt-0 flex flex-col items-center md:items-start">
     <h1 class="text-5xl lg:text-8xl md:text-7xl sm:text-6xl text-slate-800 whitespace-nowrap">
       <span *ngFor="let i of myName; let index = index" (mouseenter)="randColor(index)" (mouseleave)="randColor(index, false)"
             class="ease-in-out duration-300 text-slate-800" [style]="'color:' + i.color" [innerHTML]="i.letter"></span>
     </h1>
-    <p class="text-xl md:text4xl sm:text-3xl whitespace-nowrap italic text-slate-700 ease-in-out duration-500" [class.tracking-wide]="rainbow.length">A Senior Web Developer</p>
+    <h2 class="text-xl md:text4xl sm:text-3xl whitespace-nowrap italic text-slate-700 ease-in-out duration-500" [class.tracking-wide]="rainbow.length">A Senior Web Developer</h2>
     <div class="flex mt-2">
       <a class="mx-1 w-[42px] h-[42px] flex items-center" href="tel:+989932119059">
         <lord-icon trigger="hover" src="assets/images/phone.json"></lord-icon>

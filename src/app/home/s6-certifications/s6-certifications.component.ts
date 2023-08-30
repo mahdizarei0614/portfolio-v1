@@ -51,7 +51,7 @@ export class S6CertificationsComponent {
     },
     {
       id: 'typescript_quera',
-      title: 'Task-Oriented Course In Development With Typescript',
+      title: 'Task-Oriented Course in Development with Typescript',
       issuer: 'Quera',
       tags: ['TypeScript', 'Angular'],
       icon: 'problem.svg',
@@ -62,7 +62,7 @@ export class S6CertificationsComponent {
     },
     {
       id: 'git_quera',
-      title: 'Task-Oriented Course In Version Control With Git',
+      title: 'Task-Oriented Course in Version Control with Git',
       issuer: 'Quera',
       tags: ['Git'],
       icon: 'problem.svg',
@@ -71,6 +71,17 @@ export class S6CertificationsComponent {
       blurHash: 'L1M7x}D%01?c00-pERIV00Rj?way',
       marquee: true
     },
+    {
+      id: 'algorithm_quera',
+      title: 'Advanced Algorithmic Thinking and Data Structure',
+      issuer: 'Quera',
+      tags: ['Algorithm'],
+      icon: 'problem.svg',
+      link: 'https://quera.org/media/public/quera_certificate/f65580b95720457fa1eda0154b0fd015.jpg',
+      cert: 'algorithm_quera.jpg',
+      blurHash: 'L1M7x}D%01?c00-pERIV00Rj?way',
+      marquee: true
+    }
   ];
 
   openCert(cert: Certificate) {
