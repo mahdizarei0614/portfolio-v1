@@ -12,6 +12,8 @@ import {S6CertificationsComponent} from './s6-certifications/s6-certifications.c
 import { CertificationItemComponent } from './s6-certifications/certification-item/certification-item.component';
 import { Sx0CasinoComponent } from './sx0-casino/sx0-casino.component';
 import { MinesweeperComponent } from './sx0-casino/components/minesweeper/minesweeper.component';
+import { BriefComponent } from './brief/brief.component';
+import { ClockComponent } from './clock/clock.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { MinesweeperComponent } from './sx0-casino/components/minesweeper/minesw
     S6CertificationsComponent,
     CertificationItemComponent,
     Sx0CasinoComponent,
-    MinesweeperComponent
+    MinesweeperComponent,
+    BriefComponent,
+    ClockComponent
   ],
   imports: [
     CommonModule,
