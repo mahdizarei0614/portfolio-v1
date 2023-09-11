@@ -9,8 +9,6 @@ import {json} from "../../../assets/miserables";
 })
 export class DddVisualGraphComponent implements AfterViewInit{
   chart: any = null;
-  constructor() {
-  }
 
   ngAfterViewInit() {
     try{document.getElementById('svgg')?.removeChild(this.chart)}catch(e){}
