@@ -10,11 +10,11 @@
           </textPath>
         </text>
       </svg>
-      <h1 class="text-5xl lg:text-8xl md:text-7xl sm:text-6xl text-slate-800 whitespace-nowrap">
+      <h1 class="text-5xl lg:text-8xl md:text-7xl sm:text-6xl text-slate-800 whitespace-nowrap name">
       <span *ngFor="let i of myName; let index = index" (mouseenter)="randColor(index)" (mouseleave)="randColor(index, false)"
             class="ease-in-out duration-300 text-slate-800 text-shadow" [style]="'color:' + i.color" [innerHTML]="i.letter"></span>
       </h1>
-      <h2 class="text-xl md:text4xl sm:text-3xl whitespace-nowrap italic text-slate-700 ease-in-out duration-500" [class.tracking-wide]="rainbow.length">A Senior Web Developer</h2>
+      <h2 class="name text-xl md:text4xl sm:text-3xl whitespace-nowrap italic text-slate-700 ease-in-out duration-500" [class.tracking-wide]="rainbow.length">A Senior Web Developer</h2>
       <div class="flex gap-2">
         <a class="w-[42px] h-[42px] flex items-center" href="tel:+989932119059">
           <lord-icon trigger="hover" src="assets/images/phone.json"></lord-icon>
@@ -32,8 +32,8 @@
           <lord-icon class="w-[45px] h-[45px]" trigger="hover" src="assets/images/github.json"></lord-icon>
         </a>
       </div>
-      <a href="https://stackexchange.com/users/15847508"><img src="https://stackexchange.com/users/flair/15847508.png?theme=dark" width="208" height="58" alt="profile for Mahdi Zarei on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Mahdi Zarei on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
-      <a href="https://www.codewars.com/users/mahdizarei0614" target="_blank">
+      <a href="https://stackexchange.com/users/15847508" target="_blank"><img src="https://stackexchange.com/users/flair/15847508.png?theme=dark" width="208" height="58" alt="profile for Mahdi Zarei on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Mahdi Zarei on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
+      <a href="https://www.codewars.com/users/mahdizarei" target="_blank">
         <img class="md:hidden block" src="https://www.codewars.com/users/mahdizarei/badges/micro">
         <img class="hidden md:block lg:hidden" src="https://www.codewars.com/users/mahdizarei/badges/small">
         <img class="hidden lg:block" src="https://www.codewars.com/users/mahdizarei/badges/large">
