@@ -1,16 +1,41 @@
 .mesh-bg {
-  background-color:hsla(228,100%,88%,1);
-  background-image:
-    radial-gradient(at 24% 86%, hsla(6,69%,94%,1) 0px, transparent 50%),
-    radial-gradient(at 81% 75%, hsla(18,69%,94%,1) 0px, transparent 50%),
-    radial-gradient(at 86% 58%, hsla(285,69%,94%,1) 0px, transparent 50%),
-    radial-gradient(at 79% 69%, hsla(355,69%,94%,1) 0px, transparent 50%),
-    radial-gradient(at 68% 57%, hsla(121,69%,94%,1) 0px, transparent 50%),
-    radial-gradient(at 18% 84%, hsla(126,69%,94%,1) 0px, transparent 50%),
-    radial-gradient(at 9% 79%, hsla(150,69%,94%,1) 0px, transparent 50%);
+  background-color: hsla(228, 100%, 88%, 1);
+  background-image: radial-gradient(at 24% 86%, hsla(6, 69%, 94%, 1) 0px, transparent 50%),
+  radial-gradient(at 81% 75%, hsla(18, 69%, 94%, 1) 0px, transparent 50%),
+  radial-gradient(at 86% 58%, hsla(285, 69%, 94%, 1) 0px, transparent 50%),
+  radial-gradient(at 79% 69%, hsla(355, 69%, 94%, 1) 0px, transparent 50%),
+  radial-gradient(at 68% 57%, hsla(121, 69%, 94%, 1) 0px, transparent 50%),
+  radial-gradient(at 18% 84%, hsla(126, 69%, 94%, 1) 0px, transparent 50%),
+  radial-gradient(at 9% 79%, hsla(150, 69%, 94%, 1) 0px, transparent 50%);
 }
 
 .glass-effect {
-  background: rgb(255,255,255);
-  background: linear-gradient(-75deg, rgba(245,245,245,0.4) 0%, rgba(245,245,245,0.8) 43%, rgba(255,255,255,0) 47%, rgba(255,255,255,0) 100%);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(-75deg, rgba(245, 245, 245, 0.4) 0%, rgba(245, 245, 245, 0.8) 43%, rgba(255, 255, 255, 0) 47%, rgba(255, 255, 255, 0) 100%);
+}
+
+.status {
+  top: 2rem;
+  left: 2rem;
+
+  @media (max-width: 768px) {
+    top: unset;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+  }
+  path {
+    fill: transparent;
+  }
+
+  text {
+    fill: #fff;
+
+    @media (max-width: 768px) {
+      fill: #c2ceff;
+    }
+    font-family: 'Reenie Beanie', serif;
+    font-weight: bold;
+  }
 }
