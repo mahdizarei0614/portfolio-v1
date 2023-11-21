@@ -1,9 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { NgStyle, NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-clock',
-  templateUrl: './clock.component.html',
-  styleUrls: ['./clock.component.scss']
+    selector: 'app-clock',
+    templateUrl: './clock.component.html',
+    styleUrls: ['./clock.component.scss'],
+    standalone: true,
+    imports: [NgStyle, NgClass]
 })
 export class ClockComponent implements OnInit {
   @Input() size = 0

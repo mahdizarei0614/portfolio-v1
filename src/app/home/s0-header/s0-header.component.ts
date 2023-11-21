@@ -2,9 +2,10 @@ import {Component, EventEmitter, HostListener, Output} from '@angular/core';
 import {getWindow} from "../../app.component";
 
 @Component({
-  selector: 'app-s0-header',
-  templateUrl: './s0-header.component.html',
-  styleUrls: ['./s0-header.component.scss']
+    selector: 'app-s0-header',
+    templateUrl: './s0-header.component.html',
+    styleUrls: ['./s0-header.component.scss'],
+    standalone: true
 })
 export class S0HeaderComponent {
   @HostListener('window:scroll', ['$event']) onScroll() {

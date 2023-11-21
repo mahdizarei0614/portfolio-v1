@@ -2,9 +2,10 @@ import {AfterViewInit, Component} from '@angular/core';
 import {getWindow} from "../../../../app.component";
 
 @Component({
-  selector: 'app-minesweeper',
-  templateUrl: './minesweeper.component.html',
-  styleUrls: ['./minesweeper.component.scss']
+    selector: 'app-minesweeper',
+    templateUrl: './minesweeper.component.html',
+    styleUrls: ['./minesweeper.component.scss'],
+    standalone: true
 })
 export class MinesweeperComponent implements AfterViewInit {
   field: any = [];

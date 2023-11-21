@@ -1,29 +1,13 @@
-import {Component, Input} from '@angular/core';
-import {animate, style, transition, trigger} from "@angular/animations";
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-s3-experience',
   templateUrl: './s3-experience.component.html',
   styleUrls: ['./s3-experience.component.scss'],
-  animations: [
-    trigger(
-      'inOutAnimation',
-      [
-        transition(
-          ':enter',
-          [
-            style({filter: 'blur(16px)', opacity: 0.5}),
-            animate('.3s ease-out',
-              style({filter: 'blur(0)', opacity: 1}))
-          ]
-        )
-      ]
-    )
-  ]
+  standalone: true
 })
 export class S3ExperienceComponent {
   @Input() activated = false;
-  public selectedXp: ExperienceModel | undefined;
   public experience: ExperienceModel[] = [
     {
       id: 4,
@@ -83,7 +67,7 @@ export class S3ExperienceComponent {
       endDate: 'Jan 2022',
       bulletPoints: [
         'Solved complicated mathematical problems, added <span class="font-semibold">20k+ lines of code</span>, performed refactoring and optimization, and facilitated procedures by writing queries over <span class="font-semibold">MongoDB</span> using <span class="font-semibold">mongoose</span> as ORM in 7 months of development.',
-        'Coordinated in a team of 6 to Develop and maintain highly complicated game rules into a platform over six months with <span class="font-semibold">200+ bug-less commits</span> merged into production.',
+        'Coordinated in a team of 6 to Develop and maintain highly complicated game rules into a platform over six months with <span class="font-semibold">200+ bug-less commits</span> merged into production.'
       ]
     },
     {
@@ -105,6 +89,7 @@ export class S3ExperienceComponent {
       ]
     }
   ];
+  public selectedXp: ExperienceModel | undefined;
 
   changeSelected(e: ExperienceModel) {
     this.selectedXp = undefined;

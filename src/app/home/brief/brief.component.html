@@ -1,47 +1,71 @@
-<div id="landing" class="mesh-bg w-full h-[100vh] flex flex-col mx-auto pt-10 md:flex-row md:pt-0 px-6 md:px-24 items-start md:items-center justify-start z-0">
-  <div class="landscape:items-start flex flex-col gap-6 items-center justify-start w-full">
-    <app-clock [size]="140" [hourIdentifier]="'full'" class="md:fixed md:top-12 md:left-1/2 md:-translate-x-1/2"></app-clock>
-    <div class="z-[2] flex relative flex-col gap-2 items-center justify-start w-full">
-      <svg viewBox="0 0 425 300" width="300px" class="status text-6xl fixed animate-pulse">
-        <path id="curve" d="M6,150C49.63,93,105.79,36.65,156.2,47.55,207.89,58.74,213,131.91,264,150c40.67,14.43,108.57-6.91,229-145" />
-        <text x="25">
-          <textPath xlink:href="#curve">
-            currently open to work:)
-            </textPath>
-          </text>
-        </svg>
-        <h1 class="text-5xl lg:text-8xl md:text-7xl sm:text-6xl text-slate-800 whitespace-nowrap name">
-          @for (i of myName; track i; let index = $index) {
-            <span (mouseenter)="randColor(index)" (mouseleave)="randColor(index, false)"
-            class="ease-in-out duration-300 text-slate-800 text-shadow" [style]="'color:' + i.color" [innerHTML]="i.letter"></span>
-          }
-        </h1>
-        <h2 class="name text-xl md:text4xl sm:text-3xl whitespace-nowrap italic text-slate-700 ease-in-out duration-500" [class.tracking-wide]="rainbow.length">A Senior Web Developer</h2>
-        <div class="flex gap-2">
-          <a class="w-[42px] h-[42px] flex items-center" href="tel:+989932119059" aria-label="Call Mahdi Zarei">
-            <lord-icon trigger="hover" src="assets/images/phone.json"></lord-icon>
-          </a>
-          <a class="w-[42px] h-[42px] flex items-center" href="mailto:mahdizarei0614@gmail.com" aria-label="Mail Mahdi Zarei">
-            <lord-icon trigger="hover" src="assets/images/email.json"></lord-icon>
-          </a>
-          <a class="w-[42px] h-[42px] flex items-center" href="resume.pdf" download="mahdiZarei" aria-label="Download Mahdi Zarei's resume">
-            <lord-icon trigger="hover" src="assets/images/resume.json"></lord-icon>
-          </a>
-          <a class="w-[42px] h-[42px] flex items-center" href="https://www.linkedin.com/in/mahdizarei0614" target="_blank" aria-label="Open Mahdi Zarei's LinkedIn profile">
-            <lord-icon class="w-[42px] h-[42px]" trigger="hover" src="assets/images/linkedin.json"></lord-icon>
-          </a>
-          <a class="w-[42px] h-[42px] flex items-center" href="https://github.com/mahdizarei0614" target="_blank" aria-label="Open Mahdi Zarei's Github profile">
-            <lord-icon class="w-[45px] h-[45px]" trigger="hover" src="assets/images/github.json"></lord-icon>
-          </a>
-        </div>
-        <a href="https://stackexchange.com/users/15847508" target="_blank"><img src="https://stackexchange.com/users/flair/15847508.png?theme=dark" width="208" height="58" aria-label="Profile for Mahdi Zarei on Stack Exchange" alt="profile for Mahdi Zarei on Stack Exchange" title="profile for Mahdi Zarei on Stack Exchange"></a>
-        <a href="https://www.codewars.com/users/mahdizarei" target="_blank" aria-label="Profile for Mahdi Zarei on CodeWars">
-          <img class="md:hidden block" src="https://www.codewars.com/users/mahdizarei/badges/micro" alt="CodeWars profile">
-            <img class="hidden md:block lg:hidden" src="https://www.codewars.com/users/mahdizarei/badges/small" alt="CodeWars profile">
-              <img class="hidden lg:block" src="https://www.codewars.com/users/mahdizarei/badges/large" alt="CodeWars profile">
-              </a>
+<div id="landing"
+     class="mesh-bg w-full h-[100vh] flex flex-col mx-auto pt-10 md:flex-row md:pt-0 px-6 md:px-24 items-start md:items-center justify-start z-0">
+    <div class="landscape:items-start flex flex-col gap-6 items-center justify-start w-full">
+        @defer (on idle) {
+            <app-clock [size]="140" [hourIdentifier]="'full'"
+                       class="md:fixed md:top-12 md:left-1/2 md:-translate-x-1/2"></app-clock>
+        } @placeholder {
+            <div></div>
+        }
+        <div class="z-[2] flex relative flex-col gap-2 items-center justify-start w-full">
+            <svg viewBox="0 0 425 300" width="300px" class="status text-6xl fixed animate-pulse">
+                <path id="curve"
+                      d="M6,150C49.63,93,105.79,36.65,156.2,47.55,207.89,58.74,213,131.91,264,150c40.67,14.43,108.57-6.91,229-145"/>
+                <text x="25">
+                    <textPath xlink:href="#curve">
+                        currently open to work:)
+                    </textPath>
+                </text>
+            </svg>
+            <h1 class="text-5xl lg:text-8xl md:text-7xl sm:text-6xl text-slate-500 whitespace-nowrap name">
+                @for (i of myName;track i;let index = $index) {
+                    <span (mouseenter)="randColor(index)" (mouseleave)="randColor(index, false)"
+                          class="ease-in-out duration-300 text-slate-500 text-shadow" [style]="'color:' + i.color"
+                          [innerHTML]="i.letter"></span>
+                }
+            </h1>
+            <h2 class="name text-xl md:text4xl sm:text-3xl whitespace-nowrap italic text-slate-400 ease-in-out duration-500"
+                [class.tracking-wide]="rainbow.length">A Senior Web Developer</h2>
+            <div class="flex gap-2">
+                <a class="w-[42px] h-[42px] flex items-center" href="tel:+989932119059" aria-label="Call Mahdi Zarei">
+                    <lord-icon trigger="hover" src="assets/images/phone.json"></lord-icon>
+                </a>
+                <a class="w-[42px] h-[42px] flex items-center" href="mailto:mahdizarei0614@gmail.com"
+                   aria-label="Mail Mahdi Zarei">
+                    <lord-icon trigger="hover" src="assets/images/email.json"></lord-icon>
+                </a>
+                <a class="w-[42px] h-[42px] flex items-center" href="resume.pdf" download="mahdiZarei"
+                   aria-label="Download Mahdi Zarei's resume">
+                    <lord-icon trigger="hover" src="assets/images/resume.json"></lord-icon>
+                </a>
+                <a class="w-[42px] h-[42px] flex items-center" href="https://www.linkedin.com/in/mahdizarei0614"
+                   target="_blank" aria-label="Open Mahdi Zarei's LinkedIn profile">
+                    <lord-icon class="w-[42px] h-[42px]" trigger="hover" src="assets/images/linkedin.json"></lord-icon>
+                </a>
+                <a class="w-[42px] h-[42px] flex items-center" href="https://github.com/mahdizarei0614" target="_blank"
+                   aria-label="Open Mahdi Zarei's Github profile">
+                    <lord-icon class="w-[45px] h-[45px]" trigger="hover" src="assets/images/github.json"></lord-icon>
+                </a>
             </div>
-          </div>
-          <div class="glass-effect absolute w-full h-full z-0 right-0 bottom-0"></div>
+            <a href="https://stackexchange.com/users/15847508" target="_blank"><img
+                    src="https://stackexchange.com/users/flair/15847508.png?theme=dark" width="208" height="58"
+                    aria-label="Profile for Mahdi Zarei on Stack Exchange"
+                    alt="profile for Mahdi Zarei on Stack Exchange"
+                    title="profile for Mahdi Zarei on Stack Exchange"></a>
+            <a href="https://www.codewars.com/users/mahdizarei" target="_blank"
+               class="min-h-[48px] flex items-center"
+               aria-label="Profile for Mahdi Zarei on CodeWars">
+                <img class="md:hidden block" ngSrc="https://www.codewars.com/users/mahdizarei/badges/micro"
+                     width="120" height="20"
+                     alt="CodeWars profile">
+                <img class="hidden md:block lg:hidden" ngSrc="https://www.codewars.com/users/mahdizarei/badges/small"
+                     width="300" height="20"
+                     alt="CodeWars profile">
+                <img class="hidden lg:block" ngSrc="https://www.codewars.com/users/mahdizarei/badges/large"
+                     width="400" height="40"
+                     alt="CodeWars profile">
+            </a>
         </div>
-        
+    </div>
+    <div class="glass-effect absolute w-full h-full z-0 right-0 bottom-0"></div>
+</div>

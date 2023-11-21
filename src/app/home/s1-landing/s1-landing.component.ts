@@ -1,29 +1,14 @@
-import {Component} from '@angular/core';
-import {animate, style, transition, trigger} from "@angular/animations";
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-s1-landing',
   templateUrl: './s1-landing.component.html',
   styleUrls: ['./s1-landing.component.scss'],
-  animations: [
-    trigger(
-      'inOutAnimation',
-      [
-        transition(
-          ':leave',
-          [
-            style({opacity: 1}),
-            animate('.3s ease-out',
-              style({opacity: 0}))
-          ]
-        )
-      ]
-    )
-  ]
+  standalone: true,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class S1LandingComponent {
   loaded = false;
-  rainbow: number[] = [];
   public myName = [
     {
       letter: 'M',
@@ -70,18 +55,7 @@ export class S1LandingComponent {
       color: 'unset'
     }
   ];
-
-  randColor(index: number, on = true) {
-    if (on) {
-      this.rainbow.push(0);
-      this.myName[index].color = '#' + this.getCode();
-    } else {
-      this.rainbow.pop();
-      setTimeout(() => {
-        this.myName[index].color = 'unset';
-      }, 300);
-    }
-  }
+  rainbow: number[] = [];
 
   getCode() {
     let code = '';
@@ -93,6 +67,18 @@ export class S1LandingComponent {
 
   getOneChar() {
     const letters = ['4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd'];
-    return letters[Math.floor(Math.random() * 10)]
+    return letters[Math.floor(Math.random() * 10)];
+  }
+
+  randColor(index: number, on = true) {
+    if (on) {
+      this.rainbow.push(0);
+      this.myName[index].color = '#' + this.getCode();
+    } else {
+      this.rainbow.pop();
+      setTimeout(() => {
+        this.myName[index].color = 'unset';
+      }, 300);
+    }
   }
 }

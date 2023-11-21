@@ -1,9 +1,12 @@
 import {Component} from '@angular/core';
+import { CertificationItemComponent } from './certification-item/certification-item.component';
 
 @Component({
-  selector: 'app-s6-certifications',
-  templateUrl: './s6-certifications.component.html',
-  styleUrls: ['./s6-certifications.component.scss']
+    selector: 'app-s6-certifications',
+    templateUrl: './s6-certifications.component.html',
+    styleUrls: ['./s6-certifications.component.scss'],
+    standalone: true,
+    imports: [CertificationItemComponent]
 })
 export class S6CertificationsComponent {
   selectedCert: Certificate | null = null;

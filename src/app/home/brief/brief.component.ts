@@ -1,29 +1,17 @@
-import {Component} from '@angular/core';
-import {animate, style, transition, trigger} from "@angular/animations";
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ClockComponent } from '../clock/clock.component';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-brief',
   templateUrl: './brief.component.html',
   styleUrls: ['./brief.component.scss'],
-  animations: [
-    trigger(
-      'inOutAnimation',
-      [
-        transition(
-          ':leave',
-          [
-            style({opacity: 1}),
-            animate('.3s ease-out',
-              style({opacity: 0}))
-          ]
-        )
-      ]
-    )
-  ]
+  standalone: true,
+  imports: [ClockComponent, NgOptimizedImage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BriefComponent {
   loaded = false;
-  rainbow: number[] = [];
   public myName = [
     {
       letter: 'M',
@@ -70,18 +58,7 @@ export class BriefComponent {
       color: 'unset'
     }
   ];
-
-  randColor(index: number, on = true) {
-    if (on) {
-      this.rainbow.push(0);
-      this.myName[index].color = '#' + this.getCode();
-    } else {
-      this.rainbow.pop();
-      setTimeout(() => {
-        this.myName[index].color = 'unset';
-      }, 300);
-    }
-  }
+  rainbow: number[] = [];
 
   getCode() {
     let code = '';
@@ -93,6 +70,18 @@ export class BriefComponent {
 
   getOneChar() {
     const letters = ['4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd'];
-    return letters[Math.floor(Math.random() * 10)]
+    return letters[Math.floor(Math.random() * 10)];
+  }
+
+  randColor(index: number, on = true) {
+    if (on) {
+      this.rainbow.push(0);
+      this.myName[index].color = '#' + this.getCode();
+    } else {
+      this.rainbow.pop();
+      setTimeout(() => {
+        this.myName[index].color = 'unset';
+      }, 300);
+    }
   }
 }

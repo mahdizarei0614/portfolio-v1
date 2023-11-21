@@ -19,6 +19,7 @@
   left: 2rem;
 
   @media (max-width: 768px) {
+    display: none;
     top: unset;
     bottom: 2rem;
     left: 50%;
@@ -35,11 +36,12 @@
     @media (max-width: 768px) {
       fill: #c2ceff;
     }
-    font-family: 'Reenie Beanie', serif;
+    font-family: 'Salsa', sans-serif;
     font-weight: bold;
+    font-size: 45px;
   }
 }
 
 .name {
-  font-family: 'Shantell Sans', serif;
+  font-family: 'Salsa', sans-serif;
 }

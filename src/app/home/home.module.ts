@@ -16,26 +16,24 @@ import { BriefComponent } from './brief/brief.component';
 import { ClockComponent } from './clock/clock.component';
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    S0HeaderComponent,
-    S1LandingComponent,
-    S2BiographyComponent,
-    S3ExperienceComponent,
-    S4EducationComponent,
-    S5SkillsComponent,
-    S6CertificationsComponent,
-    CertificationItemComponent,
-    Sx0CasinoComponent,
-    MinesweeperComponent,
-    BriefComponent,
-    ClockComponent
-  ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        HomeComponent,
+        S0HeaderComponent,
+        S1LandingComponent,
+        S2BiographyComponent,
+        S3ExperienceComponent,
+        S4EducationComponent,
+        S5SkillsComponent,
+        S6CertificationsComponent,
+        CertificationItemComponent,
+        Sx0CasinoComponent,
+        MinesweeperComponent,
+        BriefComponent,
+        ClockComponent,
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeModule {
 }

@@ -8,8 +8,8 @@ describe('S3ExperienceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ S3ExperienceComponent ]
-    })
+    imports: [S3ExperienceComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(S3ExperienceComponent);

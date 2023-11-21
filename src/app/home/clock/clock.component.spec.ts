@@ -8,8 +8,8 @@ describe('ClockComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ClockComponent ]
-    })
+    imports: [ClockComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(ClockComponent);
