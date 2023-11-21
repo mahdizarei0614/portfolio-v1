@@ -1,8 +1,10 @@
 <div id="certifications" class="flex flex-col h-[100vh] w-full mx-auto pt-20 lg:pt-32 px-6 md:px-24 bg-slate-800/[0.35] bg-special backdrop-blur-xl">
   <h3 class="text-5xl md:text-7xl sm:text-6xl whitespace-nowrap text-white">Certification</h3>
   <div class="flex w-full flex-wrap flex-shrink flex-grow overflow-y-auto">
-    <div class="mx-2 relative w-[300px] h-[250px]" *ngFor="let cert of certifications">
-      <app-certification-item [certification]="cert"></app-certification-item>
-    </div>
+    @for (cert of certifications; track cert) {
+      <div class="mx-2 relative w-[300px] h-[250px]">
+        <app-certification-item [certification]="cert"></app-certification-item>
+      </div>
+    }
   </div>
 </div>

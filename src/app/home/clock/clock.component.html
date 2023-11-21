@@ -1,5 +1,5 @@
 <div class="rounded-full p-[4%] flex items-stretch border border-4 border-white shadow relative bg-white/[.3]"
-     [ngStyle]="{width: size + 'px', height: size + 'px'}">
+  [ngStyle]="{width: size + 'px', height: size + 'px'}">
   <div class="flex-1 rounded-full border border-2 border-white shadow relative">
     <div
       class="w-5/6 flex absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-[2%] origin-top-left items-stretch z-[3]"
@@ -20,19 +20,23 @@
       <div class="flex-1"></div>
     </div>
     <div
-      class="absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 h-[6%] w-[6%] bg-white rounded-full shadow z-[4]"></div>
+    class="absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 h-[6%] w-[6%] bg-white rounded-full shadow z-[4]"></div>
   </div>
-  <div *ngFor="let i of Array(12).fill(null); let index = index"
-       class="absolute h-full top-0 left-1/2 origin-left -translate-x-1/2 flex w-[1%]"
-       [ngStyle]="{rotate: (index + 1) * 30 + 'deg'}">
-    <div class="{{index % 3 === 2 ? 'h-[10%] rounded-b-full' : 'h-[4%]'}} w-full bg-white shadow text-center relative">
-      <span *ngIf="hourIdentifier === 'full' ? true : hourIdentifier === 'partial' ? index % 3 === 2 : false"
+  @for (i of Array(12).fill(null); track i; let index = $index) {
+    <div
+      class="absolute h-full top-0 left-1/2 origin-left -translate-x-1/2 flex w-[1%]"
+      [ngStyle]="{rotate: (index + 1) * 30 + 'deg'}">
+      <div class="{{index % 3 === 2 ? 'h-[10%] rounded-b-full' : 'h-[4%]'}} w-full bg-white shadow text-center relative">
+        @if (hourIdentifier === 'full' ? true : hourIdentifier === 'partial' ? index % 3 === 2 : false) {
+          <span
             [ngStyle]="{
-        rotate: (index + 1) * -30 + 'deg',
-        fontSize: index % 3 === 2 ? size / 10 + 'px' : size / 14 + 'px',
-        top: index % 3 === 2 ? size / 15 + 'px' : size / 24 + 'px'
-        }" class="absolute left-0 origin-left -translate-x-1/2 text-white drop-shadow-md"
-            [ngClass]="index % 3 === 2 ? 'font-bold' : ''">{{hourIdentifier ? index + 1 : ''}}</span>
+            rotate: (index + 1) * -30 + 'deg',
+            fontSize: index % 3 === 2 ? size / 10 + 'px' : size / 14 + 'px',
+            top: index % 3 === 2 ? size / 15 + 'px' : size / 24 + 'px'
+            }" class="absolute left-0 origin-left -translate-x-1/2 text-white drop-shadow-md"
+          [ngClass]="index % 3 === 2 ? 'font-bold' : ''">{{hourIdentifier ? index + 1 : ''}}</span>
+        }
+      </div>
     </div>
-  </div>
+  }
 </div>

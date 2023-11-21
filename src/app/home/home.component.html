@@ -1,11 +1,12 @@
-<app-brief *ngIf="brief; else full"></app-brief>
-<ng-template #full>
+@if (brief) {
+  <app-brief></app-brief>
+} @else {
   <app-s0-header></app-s0-header>
   <app-s1-landing></app-s1-landing>
   <app-s2-biography></app-s2-biography>
   <app-s3-experience></app-s3-experience>
-  <!--  <app-s4-education [activated]="isActivated(2)"></app-s4-education>-->
-  <app-s5-skills></app-s5-skills>
-  <app-s6-certifications></app-s6-certifications>
-  <app-sx0-casino></app-sx0-casino>
-</ng-template>
+<!--  <app-s4-education [activated]="isActivated(2)"></app-s4-education>-->
+<app-s5-skills></app-s5-skills>
+<app-s6-certifications></app-s6-certifications>
+<app-sx0-casino></app-sx0-casino>
+}

@@ -7,7 +7,7 @@ import {getWindow} from "../../app.component";
   styleUrls: ['./s0-header.component.scss']
 })
 export class S0HeaderComponent {
-  @HostListener('window:scroll', ['$event']) onScroll(event: any) {
+  @HostListener('window:scroll', ['$event']) onScroll() {
     this.isScrolled();
   }
   @Output() slide = new EventEmitter();

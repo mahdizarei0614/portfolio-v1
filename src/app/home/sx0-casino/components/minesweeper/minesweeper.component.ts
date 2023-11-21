@@ -74,7 +74,7 @@ export class MinesweeperComponent implements AfterViewInit {
               }
             }
           }
-          const cell: any = document.getElementById(`cell-${i}-${j}`);
+          const cell: HTMLElement = document.getElementById(`cell-${i}-${j}`) as HTMLElement;
           switch (this.field[i][j].numOfBombsAround) {
             case 0:
               cell.style.color = '#e0e0e0';

@@ -90,13 +90,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mahdi-zarei-portfolio:build:production"
+              "buildTarget": "mahdi-zarei-portfolio:build:production"
             },
             "development": {
-              "browserTarget": "mahdi-zarei-portfolio:build:development"
+              "buildTarget": "mahdi-zarei-portfolio:build:development"
             },
             "ompfinex": {
-              "browserTarget": "mahdi-zarei-portfolio:build:ompfinex"
+              "buildTarget": "mahdi-zarei-portfolio:build:ompfinex"
             }
           },
           "defaultConfiguration": "development"
@@ -104,7 +104,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mahdi-zarei-portfolio:build"
+            "buildTarget": "mahdi-zarei-portfolio:build"
           }
         },
         "test": {
