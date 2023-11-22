@@ -8,9 +8,9 @@ describe('CertificationItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [CertificationItemComponent]
-})
-    .compileComponents();
+      imports: [CertificationItemComponent]
+    })
+      .compileComponents();
 
     fixture = TestBed.createComponent(CertificationItemComponent);
     component = fixture.componentInstance;

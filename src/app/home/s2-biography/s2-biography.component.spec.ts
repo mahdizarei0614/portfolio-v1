@@ -8,9 +8,9 @@ describe('S2BiographyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [S2BiographyComponent]
-})
-    .compileComponents();
+      imports: [S2BiographyComponent]
+    })
+      .compileComponents();
 
     fixture = TestBed.createComponent(S2BiographyComponent);
     component = fixture.componentInstance;

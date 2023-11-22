@@ -1,15 +1,19 @@
 <div class="flex flex-col justify-center items-center max-w-sm mx-auto my-8">
-  <div style="background-image: url(assets/images/{{certification.cert}})" class="bg-gray-300 h-48 w-full rounded-lg shadow-md bg-cover bg-center"></div>
-  <div class="w-56 md:w-64 -mt-10 shadow-lg rounded-lg overflow-hidden">
-    @if (!certification.marquee) {
-      <div class="py-2 text-center font-bold uppercase tracking-wide text-gray-800 bg-white/[0] backdrop-blur-sm">{{certification.title}}</div>
-    }
-    @if (certification.marquee) {
-      <marquee class="py-2 text-center font-bold uppercase tracking-wide text-gray-800 bg-white/[0] backdrop-blur-sm">{{certification.title}}</marquee>
-    }
-    <div class="flex items-center justify-center py-1 px-2 bg-white/[.1] box-shadow">
-      Visit on&nbsp;
-      <a class="block text-slate-800 underline" href="{{certification.link}}" target="_blank">{{certification.issuer}}</a>
+    <div style="background-image: url(assets/images/{{certification.cert}})"
+         class="bg-gray-300 h-48 w-full rounded-lg shadow-md bg-cover bg-center"></div>
+    <div class="w-56 md:w-64 -mt-10 shadow-lg rounded-lg overflow-hidden">
+        @if (!certification.marquee) {
+            <div class="py-2 text-center font-bold uppercase tracking-wide text-gray-800 bg-white/[0] backdrop-blur-sm">{{ certification.title }}</div>
+        }
+        @if (certification.marquee) {
+            <marquee
+                    class="py-2 text-center font-bold uppercase tracking-wide text-gray-800 bg-white/[0] backdrop-blur-sm">{{ certification.title }}
+            </marquee>
+        }
+        <div class="flex items-center justify-center py-1 px-2 bg-white/[.1] box-shadow">
+            Visit on&nbsp;
+            <a class="block text-slate-800 underline" href="{{certification.link}}"
+               target="_blank">{{ certification.issuer }}</a>
+        </div>
     </div>
-  </div>
 </div>

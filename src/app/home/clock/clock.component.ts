@@ -1,15 +1,15 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { NgStyle, NgClass } from '@angular/common';
+import { Component, Inject, Input, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, NgClass, NgStyle } from '@angular/common';
 
 @Component({
-    selector: 'app-clock',
-    templateUrl: './clock.component.html',
-    styleUrls: ['./clock.component.scss'],
-    standalone: true,
-    imports: [NgStyle, NgClass]
+  selector: 'app-clock',
+  templateUrl: './clock.component.html',
+  styleUrls: ['./clock.component.scss'],
+  standalone: true,
+  imports: [NgStyle, NgClass]
 })
-export class ClockComponent implements OnInit {
-  @Input() size = 0
+export class ClockComponent {
+  @Input() size = 0;
   @Input() hourIdentifier: 'full' | 'partial' | 'off' = 'off';
   time: {
     seconds: string,
@@ -19,20 +19,22 @@ export class ClockComponent implements OnInit {
     seconds: '90deg',
     minutes: '90deg',
     hours: '90deg'
-  }
+  };
 
-  ngOnInit() {
-    setInterval(() => this.update(), 10);
+  constructor(@Inject(PLATFORM_ID) platformId: object) {
+    if (isPlatformBrowser(platformId)) {
+      setInterval(() => this.update(), 10);
+    }
   }
 
   update() {
     const elapsed = ((new Date().getTime()) -
-      ((new Date().getTimezoneOffset()) * 60 * 1000) -
-      (new Date('1970-01-01').getTime()))
+        ((new Date().getTimezoneOffset()) * 60 * 1000) -
+        (new Date('1970-01-01').getTime()))
       % 86400000;
-    this.time.seconds = this.getSecond(elapsed)
-    this.time.minutes = this.getMinute(elapsed)
-    this.time.hours = this.getHour(elapsed)
+    this.time.seconds = this.getSecond(elapsed);
+    this.time.minutes = this.getMinute(elapsed);
+    this.time.hours = this.getHour(elapsed);
   }
 
   getSecond(milliseconds: number) {

@@ -15,11 +15,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser-esbuild",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/mahdi-zarei-portfolio/browser",
+            "outputPath": "dist/mahdi-zarei-portfolio",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -30,15 +30,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
-            "scripts": [
-              "./node_modules/flowbite/dist/flowbite.js"
-            ]
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": {
+              "discoverRoutes": false,
+              "routesFile": "routes.txt"
+            },
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
-              "outputPath": "dist/mahdi-zarei-portfolio/production",
               "budgets": [
                 {
                   "type": "initial",
@@ -51,42 +56,12 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all",
-              "vendorChunk": false,
-              "commonChunk": false,
-              "optimization": true,
-              "buildOptimizer": true,
-              "sourceMap": false
-            },
-            "ompfinex": {
-              "outputPath": "dist/mahdi-zarei-portfolio/ompfinex",
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
-              "outputHashing": "all",
-              "fileReplacements": [
-                {
-                  "replace": "src/app/app-routing.module.ts",
-                  "with": "src/app/app-routing-ompfinex.module.ts"
-                }
-              ]
+              "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -139,70 +114,6 @@
               "src/**/*.html"
             ]
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/mahdi-zarei-portfolio/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media"
-            },
-            "ompfinex": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/app/app-routing.module.ts",
-                  "with": "src/app/app-routing-ompfinex.module.ts"
-                }
-              ]
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@angular-devkit/build-angular:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "mahdi-zarei-portfolio:build:development",
-              "serverTarget": "mahdi-zarei-portfolio:server:development"
-            },
-            "production": {
-              "browserTarget": "mahdi-zarei-portfolio:build:production",
-              "serverTarget": "mahdi-zarei-portfolio:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@angular-devkit/build-angular:prerender",
-          "options": {
-            "routes": [
-              "/"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "mahdi-zarei-portfolio:build:production",
-              "serverTarget": "mahdi-zarei-portfolio:server:production"
-            },
-            "development": {
-              "browserTarget": "mahdi-zarei-portfolio:build:development",
-              "serverTarget": "mahdi-zarei-portfolio:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }

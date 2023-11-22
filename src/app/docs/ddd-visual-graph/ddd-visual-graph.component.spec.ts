@@ -8,9 +8,9 @@ describe('DddVisualGraphComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [DddVisualGraphComponent]
-})
-    .compileComponents();
+      declarations: [DddVisualGraphComponent]
+    })
+      .compileComponents();
 
     fixture = TestBed.createComponent(DddVisualGraphComponent);
     component = fixture.componentInstance;

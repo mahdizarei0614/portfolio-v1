@@ -8,9 +8,9 @@ describe('Sx0CasinoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [Sx0CasinoComponent]
-})
-    .compileComponents();
+      imports: [Sx0CasinoComponent]
+    })
+      .compileComponents();
 
     fixture = TestBed.createComponent(Sx0CasinoComponent);
     component = fixture.componentInstance;

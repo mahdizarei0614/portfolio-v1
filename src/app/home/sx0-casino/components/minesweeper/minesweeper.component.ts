@@ -1,11 +1,11 @@
-import {AfterViewInit, Component} from '@angular/core';
-import {getWindow} from "../../../../app.component";
+import { AfterViewInit, Component } from '@angular/core';
+import { getWindow } from '../../../../app.component';
 
 @Component({
-    selector: 'app-minesweeper',
-    templateUrl: './minesweeper.component.html',
-    styleUrls: ['./minesweeper.component.scss'],
-    standalone: true
+  selector: 'app-minesweeper',
+  templateUrl: './minesweeper.component.html',
+  styleUrls: ['./minesweeper.component.scss'],
+  standalone: true
 })
 export class MinesweeperComponent implements AfterViewInit {
   field: any = [];
@@ -13,21 +13,20 @@ export class MinesweeperComponent implements AfterViewInit {
   totalBombs = 10;
   clickFunction = (e: Event) => {
     this.reveal(e);
-  }
+  };
 
   auxClickFunction = (e: Event) => {
     e.preventDefault();
     this.flag(e);
-  }
-
+  };
 
   ngAfterViewInit() {
     setTimeout(() => {
       this.startGame();
       document.getElementById('close')?.addEventListener('click', () => {
         document.getElementById('info')?.remove();
-      })
-    }, 1000)
+      });
+    }, 1000);
   }
 
   render() {
@@ -111,7 +110,7 @@ export class MinesweeperComponent implements AfterViewInit {
   }
 
   setListeners() {
-    const elements = document.getElementsByClassName("cell");
+    const elements = document.getElementsByClassName('cell');
     for (let i = 0; i < elements.length; i++) {
       elements[i].addEventListener('contextmenu', event => event.preventDefault());
       elements[i].addEventListener('click', this.clickFunction, false);
@@ -130,7 +129,7 @@ export class MinesweeperComponent implements AfterViewInit {
     } else {
       id = el.srcElement.parentElement.id;
     }
-    let [, row, cell] =  id.split('-');
+    let [, row, cell] = id.split('-');
     row = parseInt(row, 10);
     cell = parseInt(cell, 10);
     if (this.field[row][cell].flag) {
@@ -151,7 +150,7 @@ export class MinesweeperComponent implements AfterViewInit {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const id = el.srcElement?.id ? el.srcElement.id : el.srcElement?.parentElement?.id;
-    let [, row, cell] =  id.split('-');
+    let [, row, cell] = id.split('-');
     row = parseInt(row, 10);
     cell = parseInt(cell, 10);
     if (this.field[row][cell].revealed) {

@@ -8,9 +8,9 @@ describe('S5SkillsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [S5SkillsComponent]
-})
-    .compileComponents();
+      imports: [S5SkillsComponent]
+    })
+      .compileComponents();
 
     fixture = TestBed.createComponent(S5SkillsComponent);
     component = fixture.componentInstance;

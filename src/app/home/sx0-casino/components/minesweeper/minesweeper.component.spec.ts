@@ -8,9 +8,9 @@ describe('MinesweeperComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [MinesweeperComponent]
-})
-    .compileComponents();
+      imports: [MinesweeperComponent]
+    })
+      .compileComponents();
 
     fixture = TestBed.createComponent(MinesweeperComponent);
     component = fixture.componentInstance;

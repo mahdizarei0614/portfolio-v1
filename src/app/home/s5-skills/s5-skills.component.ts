@@ -1,13 +1,13 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {getWindow} from "../../app.component";
+import { Component, Input, OnInit } from '@angular/core';
+import { getWindow } from '../../app.component';
 import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
-    selector: 'app-s5-skills',
-    templateUrl: './s5-skills.component.html',
-    styleUrls: ['./s5-skills.component.scss'],
-    standalone: true,
-    imports: [NgClass, NgStyle]
+  selector: 'app-s5-skills',
+  templateUrl: './s5-skills.component.html',
+  styleUrls: ['./s5-skills.component.scss'],
+  standalone: true,
+  imports: [NgClass, NgStyle]
 })
 export class S5SkillsComponent implements OnInit {
   @Input() activated = false;
@@ -35,6 +35,6 @@ export class S5SkillsComponent implements OnInit {
       s.left = Math.floor((Math.random() * ((getWindow() as Window).innerWidth - 300)) + 50) + 'px';
       s.delay = (Math.random() * 7 + 3) + 's';
       s.duration = (Math.random() * 15 + 5) + 's';
-    })
+    });
   }
 }

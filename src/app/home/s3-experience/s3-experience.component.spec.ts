@@ -8,9 +8,9 @@ describe('S3ExperienceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [S3ExperienceComponent]
-})
-    .compileComponents();
+      imports: [S3ExperienceComponent]
+    })
+      .compileComponents();
 
     fixture = TestBed.createComponent(S3ExperienceComponent);
     component = fixture.componentInstance;

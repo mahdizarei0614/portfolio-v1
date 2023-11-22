@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { DocsRoutingModule } from './docs-routing.module';
 import { DddVisualGraphComponent } from './ddd-visual-graph/ddd-visual-graph.component';
 
-
 @NgModule({
   declarations: [
     DddVisualGraphComponent
@@ -14,4 +13,5 @@ import { DddVisualGraphComponent } from './ddd-visual-graph/ddd-visual-graph.com
     DocsRoutingModule
   ]
 })
-export class DocsModule { }
+export class DocsModule {
+}

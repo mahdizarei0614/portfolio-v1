@@ -27,8 +27,12 @@
 }
 
 @keyframes waves {
-  0%, 100% {transform: rotate(-2deg);}
-  50% {transform: rotate(2deg);}
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
 }
 
 .bubbles {
@@ -38,8 +42,12 @@
 }
 
 @keyframes bubbles {
-  0%, 100% {transform: rotate(-5deg);}
-  50% {transform: rotate(5deg);}
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
 }
 
 .bubbles span {
@@ -52,9 +60,18 @@
 }
 
 @keyframes bubble {
-  0% {bottom: -10%; opacity: 0;}
-  98% {bottom: 100%; opacity: 1;}
-  100% {bottom: 100%; opacity: 0;}
+  0% {
+    bottom: -10%;
+    opacity: 0;
+  }
+  98% {
+    bottom: 100%;
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
 }
 
 .bubbles .expert {

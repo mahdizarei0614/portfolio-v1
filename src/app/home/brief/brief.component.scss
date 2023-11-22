@@ -26,6 +26,7 @@
     transform: translateX(-50%);
     color: black;
   }
+
   path {
     fill: transparent;
   }
@@ -38,10 +39,26 @@
     }
     font-family: 'Salsa', sans-serif;
     font-weight: bold;
-    font-size: 45px;
+    font-size: 44px;
   }
 }
 
 .name {
   font-family: 'Salsa', sans-serif;
+}
+
+.icons {
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

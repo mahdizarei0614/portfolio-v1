@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import lottie from 'lottie-web';
-import { defineElement } from '@lordicon/element';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +10,6 @@ import { defineElement } from '@lordicon/element';
 })
 export class AppComponent {
   constructor() {
-    defineElement(lottie.loadAnimation);
   }
 }
 

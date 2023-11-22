@@ -11,7 +11,6 @@ import { NgOptimizedImage } from '@angular/common';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BriefComponent {
-  loaded = false;
   public myName = [
     {
       letter: 'M',

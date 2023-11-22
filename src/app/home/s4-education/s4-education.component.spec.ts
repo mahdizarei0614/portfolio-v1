@@ -8,9 +8,9 @@ describe('S4EducationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [S4EducationComponent]
-})
-    .compileComponents();
+      imports: [S4EducationComponent]
+    })
+      .compileComponents();
 
     fixture = TestBed.createComponent(S4EducationComponent);
     component = fixture.componentInstance;

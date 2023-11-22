@@ -1,16 +1,17 @@
-import {Component, EventEmitter, HostListener, Output} from '@angular/core';
-import {getWindow} from "../../app.component";
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
+import { getWindow } from '../../app.component';
 
 @Component({
-    selector: 'app-s0-header',
-    templateUrl: './s0-header.component.html',
-    styleUrls: ['./s0-header.component.scss'],
-    standalone: true
+  selector: 'app-s0-header',
+  templateUrl: './s0-header.component.html',
+  styleUrls: ['./s0-header.component.scss'],
+  standalone: true
 })
 export class S0HeaderComponent {
   @HostListener('window:scroll', ['$event']) onScroll() {
     this.isScrolled();
   }
+
   @Output() slide = new EventEmitter();
   scrollTop = 0;
   scrollTopActivated = -1;
@@ -34,7 +35,7 @@ export class S0HeaderComponent {
     {
       key: 'certifications',
       label: 'Certifications'
-    },
+    }
     // {
     //   key: 'games',
     //   label: 'Mini Games'
