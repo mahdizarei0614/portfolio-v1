@@ -1,0 +1,33 @@
+.enter {
+  animation: popIn 1s forwards;
+}
+.enter-sec {
+  animation: smoothIn 1s forwards;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0, 0);
+  }
+  30% {
+    transform: scale(0, 0);
+  }
+  50% {
+    transform: scale(1.1, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes smoothIn {
+  0% {
+    transform: scaleX(0);
+  }
+  30% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

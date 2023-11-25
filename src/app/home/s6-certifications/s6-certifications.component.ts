@@ -9,8 +9,6 @@ import { CertificationItemComponent } from './certification-item/certification-i
   imports: [CertificationItemComponent]
 })
 export class S6CertificationsComponent {
-  selectedCert: Certificate | null = null;
-
   certifications: Certificate[] = [
     {
       id: 'angular_basic',
@@ -86,6 +84,7 @@ export class S6CertificationsComponent {
       marquee: true
     }
   ];
+  selectedCert: Certificate | null = null;
 
   openCert(cert: Certificate) {
     this.selectedCert = cert;

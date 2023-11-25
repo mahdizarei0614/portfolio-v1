@@ -9,8 +9,9 @@ import { isPlatformBrowser, NgClass, NgStyle } from '@angular/common';
   imports: [NgStyle, NgClass]
 })
 export class ClockComponent {
-  @Input() size = 0;
+  protected readonly Array = Array;
   @Input() hourIdentifier: 'full' | 'partial' | 'off' = 'off';
+  @Input() size = 0;
   time: {
     seconds: string,
     minutes: string,
@@ -27,6 +28,18 @@ export class ClockComponent {
     }
   }
 
+  getHour(milliseconds: number) {
+    return ((milliseconds / 1000 / 60 / 60) % 12) * 30 + 90 + 'deg';
+  }
+
+  getMinute(milliseconds: number) {
+    return ((milliseconds / 1000 / 60) % 60) * 6 + 90 + 'deg';
+  }
+
+  getSecond(milliseconds: number) {
+    return ((milliseconds / 1000) % 60) * 6 + 90 + 'deg';
+  }
+
   update() {
     const elapsed = ((new Date().getTime()) -
         ((new Date().getTimezoneOffset()) * 60 * 1000) -
@@ -36,18 +49,4 @@ export class ClockComponent {
     this.time.minutes = this.getMinute(elapsed);
     this.time.hours = this.getHour(elapsed);
   }
-
-  getSecond(milliseconds: number) {
-    return ((milliseconds / 1000) % 60) * 6 + 90 + 'deg';
-  }
-
-  getMinute(milliseconds: number) {
-    return ((milliseconds / 1000 / 60) % 60) * 6 + 90 + 'deg';
-  }
-
-  getHour(milliseconds: number) {
-    return ((milliseconds / 1000 / 60 / 60) % 12) * 30 + 90 + 'deg';
-  }
-
-  protected readonly Array = Array;
 }

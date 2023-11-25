@@ -8,13 +8,7 @@ import { getWindow } from '../../app.component';
   standalone: true
 })
 export class S0HeaderComponent {
-  @HostListener('window:scroll', ['$event']) onScroll() {
-    this.isScrolled();
-  }
-
-  @Output() slide = new EventEmitter();
-  scrollTop = 0;
-  scrollTopActivated = -1;
+  public readonly getWindow = getWindow;
   menuItems = [
     {
       key: 'biography',
@@ -45,6 +39,9 @@ export class S0HeaderComponent {
     //   label: 'Languages'
     // },
   ];
+  scrollTop = 0;
+  scrollTopActivated = -1;
+  @Output() slide = new EventEmitter();
 
   goTop() {
     getWindow()?.scrollTo({top: 0});
@@ -55,5 +52,7 @@ export class S0HeaderComponent {
     this.scrollTopActivated = Math.floor(-1 * this.scrollTop / getWindow()!.innerHeight);
   }
 
-  public readonly getWindow = getWindow;
+  @HostListener('window:scroll', ['$event']) onScroll() {
+    this.isScrolled();
+  }
 }

@@ -1,9 +1,10 @@
 <div class="flex flex-col justify-center items-center">
     <div id="container"></div>
     <div class="inline-flex rounded-md shadow-sm mt-2" role="group">
-        <button type="button" (click)="gameOver ? startGame() : gameOverEmit()"
-                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-white/[0] border border-gray-200 rounded hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
-            <svg class="w-4 h-4 mr-2 fill-current" viewBox="0 0 20 20" fill="currentColor"
+        <button (click)="gameOver ? startGame() : gameOverEmit()"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-white/[0] border border-gray-200 rounded hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+                type="button">
+            <svg class="w-4 h-4 mr-2 fill-current" fill="currentColor" viewBox="0 0 20 20"
                  xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
                    transform="matrix(0 1 1 0 2.5 2.5)">
