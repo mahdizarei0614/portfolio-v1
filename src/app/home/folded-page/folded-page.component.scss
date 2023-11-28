@@ -1,0 +1,37 @@
+.fold-enter {
+  width: 0;
+  height: 0;
+  animation: foldEnter 1s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes foldEnter {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  50% {
+    height: 8rem;
+    width: 8rem;
+  }
+  100% {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+.folded-paper-bg {
+  background-color:hsla(0,0%,0%,1);
+  background-image:
+          radial-gradient(at 52% 27%, hsla(0,0%,8%,1) 0px, transparent 50%),
+          radial-gradient(at 99% 4%, hsla(181,0%,22%,1) 0px, transparent 50%),
+          radial-gradient(at 0% 100%, hsla(0,0%,23%,1) 0px, transparent 50%),
+          radial-gradient(at 63% 0%, hsla(333,0%,21%,1) 0px, transparent 50%),
+          radial-gradient(at 0% 100%, hsla(20,0%,0%,1) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, hsla(240,0%,28%,1) 0px, transparent 50%),
+          radial-gradient(at 8% 3%, hsla(339,0%,30%,1) 0px, transparent 50%);
+  opacity: 0;
+  &.show {
+    opacity: 1;
+  }
+}
