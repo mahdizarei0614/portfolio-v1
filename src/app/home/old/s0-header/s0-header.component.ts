@@ -1,5 +1,5 @@
 import { Component, EventEmitter, HostListener, Output } from '@angular/core';
-import { getWindow } from '../../app.component';
+import { getWindow } from '../../../app.component';
 
 @Component({
   selector: 'app-s0-header',

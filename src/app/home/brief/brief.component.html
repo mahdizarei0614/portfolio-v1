@@ -1,6 +1,6 @@
 <div class="mesh-bg w-full h-[100vh] flex flex-col mx-auto pt-10 md:flex-row md:pt-0 px-6 md:px-24 items-start md:items-center justify-start z-0"
      id="landing">
-    <div class="landscape:items-start flex flex-col gap-6 items-center justify-start w-full">
+    <div class="flex flex-col gap-6 items-center justify-start w-full">
         <app-clock [hourIdentifier]="'full'" [size]="140"
                    class="md:fixed md:top-12 md:left-1/2 md:-translate-x-1/2"></app-clock>
         <div class="z-[2] flex relative flex-col gap-2 items-center justify-start w-full">
@@ -25,23 +25,28 @@
                 class="fade-in name text-xl md:text4xl sm:text-3xl whitespace-nowrap italic text-slate-400 ease-in-out duration-500">
                 A Senior Web Developer</h2>
             <div class="flex gap-2">
-                <a aria-label="Call Mahdi Zarei" class="fade-in-delay delay-300 scale-0 w-[42px] h-[42px] flex items-center" href="tel:+989932119059">
+                <a aria-label="Call Mahdi Zarei"
+                   class="fade-in-delay delay-300 scale-0 w-[42px] h-[42px] flex items-center" href="tel:+989932119059">
                     <lord-icon src="assets/images/phone.json" trigger="hover"></lord-icon>
                 </a>
-                <a aria-label="Mail Mahdi Zarei" class="fade-in-delay delay-300 scale-0 w-[42px] h-[42px] flex items-center"
+                <a aria-label="Mail Mahdi Zarei"
+                   class="fade-in-delay delay-300 scale-0 w-[42px] h-[42px] flex items-center"
                    href="mailto:mahdizarei0614@gmail.com">
                     <lord-icon src="assets/images/email.json" trigger="hover"></lord-icon>
                 </a>
-                <a aria-label="Download Mahdi Zarei's resume" class="fade-in-delay delay-300 scale-0 w-[42px] h-[42px] flex items-center"
+                <a aria-label="Download Mahdi Zarei's resume"
+                   class="fade-in-delay delay-300 scale-0 w-[42px] h-[42px] flex items-center"
                    download="mahdiZarei"
                    href="resume.pdf">
                     <lord-icon src="assets/images/resume.json" trigger="hover"></lord-icon>
                 </a>
-                <a aria-label="Open Mahdi Zarei's LinkedIn profile" class="fade-in-delay delay-300 scale-0 w-[42px] h-[42px] flex items-center"
+                <a aria-label="Open Mahdi Zarei's LinkedIn profile"
+                   class="fade-in-delay delay-300 scale-0 w-[42px] h-[42px] flex items-center"
                    href="https://www.linkedin.com/in/mahdizarei0614" target="_blank">
                     <lord-icon class="w-[42px] h-[42px]" src="assets/images/linkedin.json" trigger="hover"></lord-icon>
                 </a>
-                <a aria-label="Open Mahdi Zarei's Github profile" class="fade-in-delay delay-300 scale-0 w-[42px] h-[42px] flex items-center"
+                <a aria-label="Open Mahdi Zarei's Github profile"
+                   class="fade-in-delay delay-300 scale-0 w-[42px] h-[42px] flex items-center"
                    href="https://github.com/mahdizarei0614"
                    target="_blank">
                     <lord-icon class="w-[45px] h-[45px]" src="assets/images/github.json" trigger="hover"></lord-icon>
@@ -50,7 +55,7 @@
             <a href="https://stackexchange.com/users/15847508" target="_blank"><img
                     alt="profile for Mahdi Zarei on Stack Exchange"
                     aria-label="Profile for Mahdi Zarei on Stack Exchange" height="58"
-                    ngSrc="assets/images/sof.webp"
+                    ngSrc="https://stackexchange.com/users/flair/15847508.png?theme=dark"
                     title="profile for Mahdi Zarei on Stack Exchange"
                     width="208"></a>
             <a aria-label="Profile for Mahdi Zarei on CodeWars" class="min-h-[48px] flex items-center"
@@ -67,3 +72,6 @@
     </div>
     <div class="glass-effect absolute w-full h-full z-0 right-0 bottom-0"></div>
 </div>
+@if (openedTerminal) {
+    <app-terminal [addNewTerminal]="newTerminal" (newTerminalAdded)="newTerminal = false"></app-terminal>
+}
