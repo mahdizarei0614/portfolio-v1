@@ -52,16 +52,37 @@
 }
 
 .fade-in {
-  animation: fadeIn 1s ease-in forwards;
+  animation: fadeInDelay .7s ease-in forwards;
+}
+
+.fade-in-delay {
+  animation: fadeInDelay .5s ease-in forwards;
+  animation-delay: 0.5s;
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: scale(0, 0);
+    transform: scale(.5, .5);
   }
   50% {
     opacity: 1;
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes fadeInDelay {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  33% {
+    opacity: 1;
+  }
+  75% {
     transform: scale(1.2, 1.2);
   }
   100% {

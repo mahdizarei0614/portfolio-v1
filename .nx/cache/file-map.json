@@ -67,7 +67,7 @@
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "6386819577834234174"
+        "hash": "4970918237688448689"
       },
       {
         "file": ".nx/cache/lockfile.hash",
@@ -171,11 +171,11 @@
       },
       {
         "file": "src/app/home/brief/brief.component.html",
-        "hash": "13841996292039422815"
+        "hash": "1623587598098206523"
       },
       {
         "file": "src/app/home/brief/brief.component.scss",
-        "hash": "1999976762316025595"
+        "hash": "15082596021272216889"
       },
       {
         "file": "src/app/home/brief/brief.component.spec.ts",
@@ -187,11 +187,11 @@
       },
       {
         "file": "src/app/home/clock/clock.component.html",
-        "hash": "9898035707249608801"
+        "hash": "9476167938766338038"
       },
       {
         "file": "src/app/home/clock/clock.component.scss",
-        "hash": "8894436664857285843"
+        "hash": "18295318074743183482"
       },
       {
         "file": "src/app/home/clock/clock.component.spec.ts",
@@ -502,8 +502,8 @@
         "hash": "12873099007644289869"
       },
       {
-        "file": "src/assets/images/sof.png",
-        "hash": "15704965995204944572"
+        "file": "src/assets/images/sof.webp",
+        "hash": "7819822757028987203"
       },
       {
         "file": "src/assets/images/stackoverflow.json",
