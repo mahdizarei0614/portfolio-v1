@@ -2,9 +2,9 @@
      class="absolute left-0 bottom-0 z-10 overflow-hidden shadow-[-8px_12px_44px_12px_rgba(0,0,0,0.2)] transition-all duration-500 fold-enter bg-black"
      [ngClass]="{
         'h-0 w-0': !initiated,
-        'h-24 w-24': initiated && !foldedHover && !showMyWork,
-        'w-32 h-32': foldedHover && !showMyWork,
-        'w-full h-full': showMyWork
+        'h-24 w-24': initiated && !foldedHover,
+        'w-28 h-28': foldedHover,
+        '!w-full !h-full': showMyWork
         }">
     <div class="folded-paper-bg absolute left-0 bottom-0 w-[100vw] h-[100vh] transition-all duration-[2s]" [ngClass]="{
     'show': showMyWork
@@ -16,10 +16,10 @@
 
         </div>
     </div>
-    <div class="w-full h-full absolute top-0 right-0 overflow-hidden transition-all cursor-pointer"
+    <div class="w-full h-full absolute top-0 right-0 overflow-hidden transition-all cursor-pointer duration-500"
          [ngStyle]="{
-    maxWidth: showMyWork && !foldedHover ? '8rem' :'10rem',
-    maxHeight: showMyWork && !foldedHover ? '8rem' :'10rem'
+    maxWidth: showMyWork && !foldedHover ? '6rem' :'7rem',
+    maxHeight: showMyWork && !foldedHover ? '6rem' :'7rem'
     }"
          (mouseenter)="foldedHover = true" (mouseleave)="foldedHover = false" (click)="showMyWork = !showMyWork">
         <div class="w-[142%] h-[142%] -rotate-[135deg] relative left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-transparent flex flex-col">
@@ -27,7 +27,7 @@
                  [ngClass]="{
                  'opacity-100': showMyWork
                  }">
-                <span class="rotate-180 mt-4 name text-xl text-slate-400">Home</span>
+                <span class="rotate-180 mt-4 name text-xl text-slate-400 transition-all">Home</span>
             </div>
             <div class="h-1/2 w-full bg-gradient-to-r from-[#C2CEFF] to-[#FAE5E7] transition-all flex flex-col items-center justify-end overflow-hidden">
                 <span class="rotate-180 mt-2 name text-xl text-slate-400 transition-all opacity-0" [ngClass]="{

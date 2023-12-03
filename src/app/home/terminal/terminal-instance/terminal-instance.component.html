@@ -1,0 +1,83 @@
+@if (!terminal.minimized) {
+
+    <div
+            mwlResizable
+            [enableGhostResize]="true"
+            (resizeEnd)="onResizeEnd($event)"
+            class="fixed rounded-t-xl bg-gray-800 shadow-xl border border-black flex flex-col"
+            [ngStyle]="{
+         zIndex: terminal.id + 20,
+         top: terminal.full ? '0' : terminal.y + 'px',
+         left: terminal.full ? '0' : terminal.x + 'px',
+         width: terminal.full ? '100%' : terminal.width + 'px',
+         height: terminal.full ? '100%' : terminal.height + 'px'
+         }"
+    >
+        <div
+                class="resize-handle-top z-50"
+                mwlResizeHandle
+                [resizeEdges]="{ top: true }"
+        ></div>
+        <div
+                class="resize-handle-left z-50"
+                mwlResizeHandle
+                [resizeEdges]="{ left: true }"
+        ></div>
+        <div
+                class="resize-handle-right z-50"
+                mwlResizeHandle
+                [resizeEdges]="{ right: true }"
+        ></div>
+        <div
+                class="resize-handle-bottom z-50"
+                mwlResizeHandle
+                [resizeEdges]="{ bottom: true }"
+        ></div>
+        <div class="w-full flex justify-end p-2 rounded-t-xl border border-x-0 border-t-gray-600 border-b-black relative cursor-grab z-0">
+            <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white">Terminal #{{ terminal.id + 1 }}</span>
+            <div class="flex gap-2">
+                <div class="rounded-full w-5 h-5 bg-gray-500 flex justify-center items-center cursor-pointer hover:bg-gray-400"
+                     (click)="minimizeTerminal.emit(terminal.id)">
+                    <span>-</span>
+                </div>
+                <div class="rounded-full w-5 h-5 bg-gray-500 flex justify-center items-center cursor-pointer hover:bg-gray-400"
+                     (click)="fullTerminal.emit(terminal.id)">
+                    <span>{{terminal.full ? '&#10697;' : '&square;'}}</span>
+                </div>
+                <div class="rounded-full w-5 h-5 bg-gray-500 flex justify-center items-center cursor-pointer hover:bg-gray-400"
+                     (click)="closeTerminal.emit(terminal.id)">
+                    <span>&#x2715;</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#300] grow px-1">
+            @for (command of terminal.commands;track command.id) {
+                @switch (command.type) {
+                    @case (TerminalMessageType.Input) {
+                        <span class="text-green-500">{{ 'mahdizarei@MahdiZarei' }}</span><span class="text-white">:</span><span class="text-blue-600">~</span><span class="text-white">$</span>
+                        <span class="text-white">{{command.text}}</span>
+                        <br/>
+                    }
+                    @case (TerminalMessageType.Response) {
+                        <div [innerHTML]="command.html"></div>
+                    }
+                    @case (TerminalMessageType.Error) {
+                        <span class="text-red-600">Invalid Command.</span>
+                        <br/>
+                    }
+                }
+            }
+            <div>
+                <span class="text-green-500">{{ 'mahdizarei@MahdiZarei' }}</span><span class="text-white">:</span><span class="text-blue-600">~</span><span class="text-white">$</span>
+                <span id="command" class="text-white outline-none" autofocus (input)="input($event)" (keydown.enter)="command()" contenteditable="true"></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+} @else {
+    <div class="rounded-t-xl p-2 bg-gray-800 cursor-pointer hover:bg-gray-700" (click)="maximizeTerminal.emit(terminal.id)">
+                <span class="text-white whitespace-nowrap">
+                Terminal #{{ terminal.id + 1 }}
+                </span>
+    </div>
+}

@@ -1,39 +1,12 @@
 @for (t of terminals | async;track t) {
     @if (t) {
-        <div class="w-[500px] fixed rounded-t-xl bg-gray-800 shadow-xl border border-black"
-             [ngStyle]="{
-         zIndex: t.id + 20,
-         top: t.y + 'px',
-         left: t.x + 'px'
-         }">
-            <div class="w-full flex justify-end p-2 rounded-t-xl border border-x-0 border-t-gray-600 border-b-black relative">
-                <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white">Terminal #{{ t.id + 1 }}</span>
-                <div class="flex gap-2">
-                    <div class="rounded-full w-4 h-4 bg-gray-500 flex justify-center items-center cursor-pointer hover:bg-gray-400"
-                         (click)="t.minimized = true">
-                        <span>-</span>
-                    </div>
-                    <div class="rounded-full w-4 h-4 bg-gray-500 flex justify-center items-center cursor-pointer hover:bg-gray-400"
-                         (click)="close(t.id)">
-                        <span>&#x2715;</span>
-                    </div>
-                    <!--                <div class="rounded-full w-4 h-4 bg-gray-500 flex justify-center items-center">-->
-                    <!--                    <span>&#x2715;</span>-->
-                    <!--                </div>-->
-                </div>
-            </div>
-            <div class="bg-[#300] h-96"></div>
-        </div>
+        <app-terminal-instance [terminal]="t" (closeTerminal)="close($event)" (minimizeTerminal)="minimize($event)" (fullTerminal)="full($event)"></app-terminal-instance>
     }
 }
-<div class="absolute bottom-0 left-0 w-full flex gap-2 overflow-x-auto">
+<div class="absolute left-1/2 -translate-x-1/2 bottom-0 w-[calc(100%-16rem)] flex gap-2 overflow-x-auto">
     @for (t of terminalsMinimized | async;track t) {
         @if (t) {
-            <div class="rounded-t-xl p-2 bg-gray-800 cursor-pointer hover:bg-gray-700" (click)="t.minimized = false">
-                <span class="text-white whitespace-nowrap">
-                Terminal #{{ t.id + 1 }}
-                </span>
-            </div>
+            <app-terminal-instance [terminal]="t" (closeTerminal)="close($event)" (maximizeTerminal)="maximize($event)"></app-terminal-instance>
         }
     }
 </div>

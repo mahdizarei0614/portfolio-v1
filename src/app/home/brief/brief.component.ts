@@ -18,7 +18,7 @@ export class BriefComponent implements OnInit {
     letter: i,
     color: 'unset'
   }));
-  newTerminal = false;
+  newTerminal = 0;
   openedTerminal = false;
   platformId!: object;
   rainbow: number[] = [];
@@ -39,12 +39,9 @@ export class BriefComponent implements OnInit {
       fromEvent(window, 'keypress'),
       fromEvent(window, 'keydown')
     ];
-    // we merge all kind of event as one observable.
     return merge(...eventsType$)
       .pipe(
-        // We prevent multiple next by wait 10ms before to next value.
         debounce(() => timer(10)),
-        // We map answer to KeyboardEvent, typescript strong typing...
         map(state => (state as KeyboardEvent))
       );
   }
@@ -64,8 +61,11 @@ export class BriefComponent implements OnInit {
 
   onKeyPress($event: KeyboardEvent) {
     if (($event.ctrlKey || $event.metaKey) && $event.altKey && $event.key === 'z') {
-      this.openedTerminal = true;
-      this.newTerminal = true;
+      if (!this.openedTerminal) {
+        this.openedTerminal = true;
+      } else {
+        this.newTerminal = Math.random();
+      }
     }
   }
 

@@ -27,6 +27,7 @@
     "@angular/platform-server": "^17.0.4",
     "@angular/router": "^17.0.4",
     "@angular/ssr": "^17.0.2",
+    "angular-resizable-element": "^7.0.2",
     "express": "^4.18.2",
     "flowbite": "^1.6.4",
     "rxjs": "~7.8.0",

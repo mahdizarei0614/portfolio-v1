@@ -1,19 +1,23 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, map, Observable } from 'rxjs';
+import {
+  Terminal,
+  TerminalInstanceComponent
+} from './terminal-instance/terminal-instance.component';
 
 @Component({
   selector: 'app-terminal',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TerminalInstanceComponent],
   templateUrl: './terminal.component.html',
   styleUrl: './terminal.component.scss'
 })
-export class TerminalComponent {
+export class TerminalComponent implements OnInit {
   _terminals$: BehaviorSubject<TerminalCell[]> = new BehaviorSubject<TerminalCell[]>([]);
-
-  @Input() set addNewTerminal(newTerminal: boolean) {
-    if (newTerminal) {
+  @Output() terminate = new EventEmitter();
+  @Input() set addNewTerminal(newTerminal: number) {
+    if (newTerminal > 0) {
       this.add();
       this.newTerminalAdded.emit();
     }
@@ -33,7 +37,7 @@ export class TerminalComponent {
 
   get terminals(): Observable<TerminalCell[]> {
     return this._terminals$.asObservable().pipe(map(terminal => {
-      return terminal.filter(t => !t || !t?.minimized);
+      return terminal.filter(t => t && !t?.minimized);
     }));
   }
 
@@ -41,6 +45,10 @@ export class TerminalComponent {
     return this._terminals$.asObservable().pipe(map(terminal => {
       return terminal.filter(t => t && t?.minimized);
     }));
+  }
+
+  public ngOnInit() {
+    this.add();
   }
 
   private setTerminals(terminals: TerminalCell[]) {
@@ -54,10 +62,14 @@ export class TerminalComponent {
       id: this.firstLastAvailableTerminalId,
       x: firstAvailableIndex * 32 + 100,
       y: firstAvailableIndex * 32 + 100,
-      minimized: false
+      width: 500,
+      height: 400,
+      minimized: false,
+      full: false,
+      commands: []
     };
-    console.log(terminals);
     this.setTerminals(terminals);
+    this.newTerminalAdded.emit();
   }
 
   close(id: number): void {
@@ -65,6 +77,9 @@ export class TerminalComponent {
       if (i?.id === id) return undefined;
       return i;
     }));
+    if (!this._terminals$.getValue().filter(i => i !== undefined).length) {
+      this.terminate.emit();
+    }
   }
 
   minimize(id: number): void {
@@ -75,13 +90,24 @@ export class TerminalComponent {
       return i;
     }));
   }
-}
 
-interface Terminal {
-  id: number;
-  x: number;
-  y: number;
-  minimized: boolean;
+  full(id: number): void {
+    this.setTerminals(this._terminals$.getValue().map(i => {
+      if (i?.id === id) {
+        i.full = !i.full;
+      }
+      return i;
+    }));
+  }
+
+  maximize(id: number): void {
+    this.setTerminals(this._terminals$.getValue().map(i => {
+      if (i?.id === id) {
+        i.minimized = false;
+      }
+      return i;
+    }));
+  }
 }
 
 type TerminalCell = Terminal | undefined;

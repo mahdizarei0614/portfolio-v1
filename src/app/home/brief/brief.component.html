@@ -54,7 +54,7 @@
             </div>
             <a href="https://stackexchange.com/users/15847508" target="_blank"><img
                     alt="profile for Mahdi Zarei on Stack Exchange"
-                    aria-label="Profile for Mahdi Zarei on Stack Exchange" height="58"
+                    aria-label="Profile for Mahdi Zarei on Stack Exchange" height="58" priority
                     ngSrc="https://stackexchange.com/users/flair/15847508.png?theme=dark"
                     title="profile for Mahdi Zarei on Stack Exchange"
                     width="208"></a>
@@ -62,16 +62,18 @@
                href="https://www.codewars.com/users/mahdizarei"
                target="_blank">
                 <img alt="CodeWars profile" class="lg:hidden block"
-                     height="30" ngSrc="https://www.codewars.com/users/mahdizarei/badges/micro"
+                     height="30" ngSrc="https://www.codewars.com/users/mahdizarei/badges/micro" priority
                      width="180">
                 <img alt="CodeWars profile" class="hidden lg:block"
-                     height="40" ngSrc="https://www.codewars.com/users/mahdizarei/badges/large"
+                     height="40" ngSrc="https://www.codewars.com/users/mahdizarei/badges/large" priority
                      width="400">
             </a>
         </div>
     </div>
+    <div class="fixed bottom-2 left-1/2 -translate-x-1/2 z-10 text-slate-400 bold text-xl name whitespace-nowrap">Press Ctrl + Alt + Z</div>
     <div class="glass-effect absolute w-full h-full z-0 right-0 bottom-0"></div>
 </div>
+<app-folded-page></app-folded-page>
 @if (openedTerminal) {
-    <app-terminal [addNewTerminal]="newTerminal" (newTerminalAdded)="newTerminal = false"></app-terminal>
+    <app-terminal (terminate)="openedTerminal = false; newTerminal = 0" [addNewTerminal]="newTerminal"></app-terminal>
 }

@@ -67,7 +67,7 @@
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "4970918237688448689"
+        "hash": "1374664365339148013"
       },
       {
         "file": ".nx/cache/lockfile.hash",
@@ -171,11 +171,11 @@
       },
       {
         "file": "src/app/home/brief/brief.component.html",
-        "hash": "1623587598098206523"
+        "hash": "7441435456982782384"
       },
       {
         "file": "src/app/home/brief/brief.component.scss",
-        "hash": "15082596021272216889"
+        "hash": "7617605213012029498"
       },
       {
         "file": "src/app/home/brief/brief.component.spec.ts",
@@ -183,7 +183,7 @@
       },
       {
         "file": "src/app/home/brief/brief.component.ts",
-        "hash": "8690372611213175064"
+        "hash": "12054261714565325254"
       },
       {
         "file": "src/app/home/clock/clock.component.html",
@@ -200,6 +200,22 @@
       {
         "file": "src/app/home/clock/clock.component.ts",
         "hash": "16158649710667975524"
+      },
+      {
+        "file": "src/app/home/folded-page/folded-page.component.html",
+        "hash": "17903785726616598160"
+      },
+      {
+        "file": "src/app/home/folded-page/folded-page.component.scss",
+        "hash": "13755426297140248405"
+      },
+      {
+        "file": "src/app/home/folded-page/folded-page.component.spec.ts",
+        "hash": "7001885587721824900"
+      },
+      {
+        "file": "src/app/home/folded-page/folded-page.component.ts",
+        "hash": "17254918433530199535"
       },
       {
         "file": "src/app/home/home-routing.module.ts",
@@ -226,164 +242,196 @@
         "hash": "265792729741069479"
       },
       {
-        "file": "src/app/home/s0-header/s0-header.component.html",
-        "hash": "822751134477086394"
+        "file": "src/app/home/old/s0-header/s0-header.component.html",
+        "hash": "13913861636111410014"
       },
       {
-        "file": "src/app/home/s0-header/s0-header.component.scss",
+        "file": "src/app/home/old/s0-header/s0-header.component.scss",
         "hash": "3244421341483603138"
       },
       {
-        "file": "src/app/home/s0-header/s0-header.component.spec.ts",
+        "file": "src/app/home/old/s0-header/s0-header.component.spec.ts",
         "hash": "15500873493900241676"
       },
       {
-        "file": "src/app/home/s0-header/s0-header.component.ts",
-        "hash": "13477061374778480806"
+        "file": "src/app/home/old/s0-header/s0-header.component.ts",
+        "hash": "3818828885809612086"
       },
       {
-        "file": "src/app/home/s1-landing/s1-landing.component.html",
-        "hash": "986254506066443833"
+        "file": "src/app/home/old/s1-landing/s1-landing.component.html",
+        "hash": "12756238025284985496"
       },
       {
-        "file": "src/app/home/s1-landing/s1-landing.component.scss",
+        "file": "src/app/home/old/s1-landing/s1-landing.component.scss",
         "hash": "16762442404304779013"
       },
       {
-        "file": "src/app/home/s1-landing/s1-landing.component.spec.ts",
+        "file": "src/app/home/old/s1-landing/s1-landing.component.spec.ts",
         "hash": "12530882147422198678"
       },
       {
-        "file": "src/app/home/s1-landing/s1-landing.component.ts",
+        "file": "src/app/home/old/s1-landing/s1-landing.component.ts",
         "hash": "1327101119705852339"
       },
       {
-        "file": "src/app/home/s2-biography/s2-biography.component.html",
+        "file": "src/app/home/old/s2-biography/s2-biography.component.html",
         "hash": "12443268620589095833"
       },
       {
-        "file": "src/app/home/s2-biography/s2-biography.component.scss",
+        "file": "src/app/home/old/s2-biography/s2-biography.component.scss",
         "hash": "11580826024617692242"
       },
       {
-        "file": "src/app/home/s2-biography/s2-biography.component.spec.ts",
+        "file": "src/app/home/old/s2-biography/s2-biography.component.spec.ts",
         "hash": "4246163938744409443"
       },
       {
-        "file": "src/app/home/s2-biography/s2-biography.component.ts",
+        "file": "src/app/home/old/s2-biography/s2-biography.component.ts",
         "hash": "15492583913141057840"
       },
       {
-        "file": "src/app/home/s3-experience/s3-experience.component.html",
+        "file": "src/app/home/old/s3-experience/s3-experience.component.html",
         "hash": "11116557228403713047"
       },
       {
-        "file": "src/app/home/s3-experience/s3-experience.component.scss",
+        "file": "src/app/home/old/s3-experience/s3-experience.component.scss",
         "hash": "2471629926989981597"
       },
       {
-        "file": "src/app/home/s3-experience/s3-experience.component.spec.ts",
+        "file": "src/app/home/old/s3-experience/s3-experience.component.spec.ts",
         "hash": "1852522810624955197"
       },
       {
-        "file": "src/app/home/s3-experience/s3-experience.component.ts",
+        "file": "src/app/home/old/s3-experience/s3-experience.component.ts",
         "hash": "18331959502178350113"
       },
       {
-        "file": "src/app/home/s4-education/s4-education.component.html",
+        "file": "src/app/home/old/s4-education/s4-education.component.html",
         "hash": "8689726609115594238"
       },
       {
-        "file": "src/app/home/s4-education/s4-education.component.scss",
+        "file": "src/app/home/old/s4-education/s4-education.component.scss",
         "hash": "3244421341483603138"
       },
       {
-        "file": "src/app/home/s4-education/s4-education.component.spec.ts",
+        "file": "src/app/home/old/s4-education/s4-education.component.spec.ts",
         "hash": "15397753888290219667"
       },
       {
-        "file": "src/app/home/s4-education/s4-education.component.ts",
+        "file": "src/app/home/old/s4-education/s4-education.component.ts",
         "hash": "15972782125503570532"
       },
       {
-        "file": "src/app/home/s5-skills/s5-skills.component.html",
+        "file": "src/app/home/old/s5-skills/s5-skills.component.html",
         "hash": "13798269655587086292"
       },
       {
-        "file": "src/app/home/s5-skills/s5-skills.component.scss",
+        "file": "src/app/home/old/s5-skills/s5-skills.component.scss",
         "hash": "13180617047661645871"
       },
       {
-        "file": "src/app/home/s5-skills/s5-skills.component.spec.ts",
+        "file": "src/app/home/old/s5-skills/s5-skills.component.spec.ts",
         "hash": "5295009686055768256"
       },
       {
-        "file": "src/app/home/s5-skills/s5-skills.component.ts",
+        "file": "src/app/home/old/s5-skills/s5-skills.component.ts",
         "hash": "7046940424123090783"
       },
       {
-        "file": "src/app/home/s6-certifications/certification-item/certification-item.component.html",
+        "file": "src/app/home/old/s6-certifications/certification-item/certification-item.component.html",
         "hash": "3082507727918269833"
       },
       {
-        "file": "src/app/home/s6-certifications/certification-item/certification-item.component.scss",
+        "file": "src/app/home/old/s6-certifications/certification-item/certification-item.component.scss",
         "hash": "3244421341483603138"
       },
       {
-        "file": "src/app/home/s6-certifications/certification-item/certification-item.component.spec.ts",
+        "file": "src/app/home/old/s6-certifications/certification-item/certification-item.component.spec.ts",
         "hash": "9152110240009312854"
       },
       {
-        "file": "src/app/home/s6-certifications/certification-item/certification-item.component.ts",
+        "file": "src/app/home/old/s6-certifications/certification-item/certification-item.component.ts",
         "hash": "8343032200988059299"
       },
       {
-        "file": "src/app/home/s6-certifications/s6-certifications.component.html",
+        "file": "src/app/home/old/s6-certifications/s6-certifications.component.html",
         "hash": "2132056158981612473"
       },
       {
-        "file": "src/app/home/s6-certifications/s6-certifications.component.scss",
+        "file": "src/app/home/old/s6-certifications/s6-certifications.component.scss",
         "hash": "18026900349036586359"
       },
       {
-        "file": "src/app/home/s6-certifications/s6-certifications.component.spec.ts",
+        "file": "src/app/home/old/s6-certifications/s6-certifications.component.spec.ts",
         "hash": "8798933349582476918"
       },
       {
-        "file": "src/app/home/s6-certifications/s6-certifications.component.ts",
+        "file": "src/app/home/old/s6-certifications/s6-certifications.component.ts",
         "hash": "2770180261339715005"
       },
       {
-        "file": "src/app/home/sx0-casino/components/minesweeper/minesweeper.component.html",
+        "file": "src/app/home/old/sx0-casino/components/minesweeper/minesweeper.component.html",
         "hash": "9986561033162956232"
       },
       {
-        "file": "src/app/home/sx0-casino/components/minesweeper/minesweeper.component.scss",
+        "file": "src/app/home/old/sx0-casino/components/minesweeper/minesweeper.component.scss",
         "hash": "15726928425285248595"
       },
       {
-        "file": "src/app/home/sx0-casino/components/minesweeper/minesweeper.component.spec.ts",
+        "file": "src/app/home/old/sx0-casino/components/minesweeper/minesweeper.component.spec.ts",
         "hash": "12757761205712509790"
       },
       {
-        "file": "src/app/home/sx0-casino/components/minesweeper/minesweeper.component.ts",
+        "file": "src/app/home/old/sx0-casino/components/minesweeper/minesweeper.component.ts",
         "hash": "13323058106574867215"
       },
       {
-        "file": "src/app/home/sx0-casino/sx0-casino.component.html",
+        "file": "src/app/home/old/sx0-casino/sx0-casino.component.html",
         "hash": "2800002163368121616"
       },
       {
-        "file": "src/app/home/sx0-casino/sx0-casino.component.scss",
+        "file": "src/app/home/old/sx0-casino/sx0-casino.component.scss",
         "hash": "9198310470359231318"
       },
       {
-        "file": "src/app/home/sx0-casino/sx0-casino.component.spec.ts",
+        "file": "src/app/home/old/sx0-casino/sx0-casino.component.spec.ts",
         "hash": "8317434721507963658"
       },
       {
-        "file": "src/app/home/sx0-casino/sx0-casino.component.ts",
+        "file": "src/app/home/old/sx0-casino/sx0-casino.component.ts",
         "hash": "5443937038817782650"
+      },
+      {
+        "file": "src/app/home/terminal/terminal-instance/terminal-instance.component.html",
+        "hash": "820775153501760491"
+      },
+      {
+        "file": "src/app/home/terminal/terminal-instance/terminal-instance.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/home/terminal/terminal-instance/terminal-instance.component.spec.ts",
+        "hash": "4861367522850327209"
+      },
+      {
+        "file": "src/app/home/terminal/terminal-instance/terminal-instance.component.ts",
+        "hash": "720187412102876296"
+      },
+      {
+        "file": "src/app/home/terminal/terminal.component.html",
+        "hash": "12736920012461046346"
+      },
+      {
+        "file": "src/app/home/terminal/terminal.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/home/terminal/terminal.component.spec.ts",
+        "hash": "9992433418678844277"
+      },
+      {
+        "file": "src/app/home/terminal/terminal.component.ts",
+        "hash": "9877793175641881763"
       },
       {
         "file": "src/assets/.gitkeep",
@@ -520,6 +568,10 @@
       {
         "file": "src/assets/miserables.ts",
         "hash": "9638303374288782553"
+      },
+      {
+        "file": "src/assets/sitemap.xml",
+        "hash": "2044878682514327091"
       },
       {
         "file": "src/favicon.ico",
