@@ -1,4 +1,11 @@
-import { Component, Inject, Input, PLATFORM_ID } from '@angular/core';
+import {
+  ChangeDetectionStrategy, ChangeDetectorRef,
+  Component,
+  inject,
+  Inject,
+  Input,
+  PLATFORM_ID
+} from '@angular/core';
 import { isPlatformBrowser, NgClass, NgStyle } from '@angular/common';
 
 @Component({
@@ -6,9 +13,11 @@ import { isPlatformBrowser, NgClass, NgStyle } from '@angular/common';
   templateUrl: './clock.component.html',
   styleUrls: ['./clock.component.scss'],
   standalone: true,
-  imports: [NgStyle, NgClass]
+  imports: [NgStyle, NgClass],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ClockComponent {
+  private _cdr = inject(ChangeDetectorRef);
   protected readonly Array = Array;
   @Input() hourIdentifier: 'full' | 'partial' | 'off' = 'off';
   @Input() size = 0;
@@ -24,7 +33,10 @@ export class ClockComponent {
 
   constructor(@Inject(PLATFORM_ID) platformId: object) {
     if (isPlatformBrowser(platformId)) {
-      setInterval(() => this.update(), 10);
+      setInterval(() => {
+        this.update();
+        this._cdr.markForCheck();
+      }, 100);
     }
   }
 

@@ -38,3 +38,9 @@ mwlResizable {
 .resize-handle-right {
   right: 0;
 }
+
+#terminal {
+  span {
+    @apply text-sm #{!important};
+  }
+}

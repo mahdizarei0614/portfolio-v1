@@ -1,4 +1,11 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  Inject,
+  OnInit,
+  PLATFORM_ID
+} from '@angular/core';
 import { ClockComponent } from '../clock/clock.component';
 import { isPlatformBrowser, NgClass, NgOptimizedImage, NgStyle } from '@angular/common';
 import { FoldedPageComponent } from '../folded-page/folded-page.component';
@@ -11,7 +18,8 @@ import { debounce, fromEvent, map, merge, Observable, timer } from 'rxjs';
   styleUrls: ['./brief.component.scss'],
   standalone: true,
   imports: [ClockComponent, NgOptimizedImage, NgClass, NgStyle, FoldedPageComponent, TerminalComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BriefComponent implements OnInit {
   public myName = [...'Mahdi'.split(''), '&nbsp;', ...'Zarei'.split('')].map((i) => ({

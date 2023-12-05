@@ -12,6 +12,7 @@
          width: terminal.full ? '100%' : terminal.width + 'px',
          height: terminal.full ? '100%' : terminal.height + 'px'
          }"
+            (click)="Command.focus()"
     >
         <div
                 class="resize-handle-top z-50"
@@ -50,27 +51,34 @@
                 </div>
             </div>
         </div>
-        <div class="bg-[#300] grow px-1">
+        <div id="terminal" class="bg-[#300] grow px-1">
+            <pre class="text-white">
+  __  __   ______
+ |  \/  | |___  /     Thank you for trying this shitty terminal :)
+ | \  / |    / /
+ | |\/| |   / /       To see a list of available commands enter:
+ | |  | |  / /__
+ |_|  |_| /_____|     mz help
+            </pre>
             @for (command of terminal.commands;track command.id) {
                 @switch (command.type) {
                     @case (TerminalMessageType.Input) {
                         <span class="text-green-500">{{ 'mahdizarei@MahdiZarei' }}</span><span class="text-white">:</span><span class="text-blue-600">~</span><span class="text-white">$</span>
-                        <span class="text-white">{{command.text}}</span>
+                        <span class="text-white ms-2">{{command.text}}</span>
                         <br/>
                     }
                     @case (TerminalMessageType.Response) {
                         <div [innerHTML]="command.html"></div>
                     }
                     @case (TerminalMessageType.Error) {
-                        <span class="text-red-600">Invalid Command.</span>
+                        <span class="text-red-600">command not found: {{command.text}}</span>
                         <br/>
                     }
                 }
             }
             <div>
                 <span class="text-green-500">{{ 'mahdizarei@MahdiZarei' }}</span><span class="text-white">:</span><span class="text-blue-600">~</span><span class="text-white">$</span>
-                <span id="command" class="text-white outline-none" autofocus (input)="input($event)" (keydown.enter)="command()" contenteditable="true"></span>
-                <span></span>
+                <span #Command id="command" class="text-white outline-none ms-2" autofocus (input)="input($event)" (keydown.arrowUp)="pervCommand()" (keydown.arrowDown)="nextCommand()" (keydown.enter)="command()" contenteditable="true"></span>
             </div>
         </div>
     </div>

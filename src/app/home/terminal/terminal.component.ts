@@ -1,29 +1,37 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output
+} from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import {
   Terminal,
   TerminalInstanceComponent
 } from './terminal-instance/terminal-instance.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-terminal',
   standalone: true,
-  imports: [CommonModule, TerminalInstanceComponent],
+  imports: [TerminalInstanceComponent, AsyncPipe],
   templateUrl: './terminal.component.html',
-  styleUrl: './terminal.component.scss'
+  styleUrl: './terminal.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TerminalComponent implements OnInit {
   _terminals$: BehaviorSubject<TerminalCell[]> = new BehaviorSubject<TerminalCell[]>([]);
+  @Output() newTerminalAdded = new EventEmitter<void>();
   @Output() terminate = new EventEmitter();
+
   @Input() set addNewTerminal(newTerminal: number) {
     if (newTerminal > 0) {
       this.add();
       this.newTerminalAdded.emit();
     }
   }
-
-  @Output() newTerminalAdded = new EventEmitter<void>();
 
   get firstAvailableIndex(): number {
     const terminals = this._terminals$.getValue();
@@ -62,8 +70,8 @@ export class TerminalComponent implements OnInit {
       id: this.firstLastAvailableTerminalId,
       x: firstAvailableIndex * 32 + 100,
       y: firstAvailableIndex * 32 + 100,
-      width: 500,
-      height: 400,
+      width: 800,
+      height: 500,
       minimized: false,
       full: false,
       commands: []
@@ -82,15 +90,6 @@ export class TerminalComponent implements OnInit {
     }
   }
 
-  minimize(id: number): void {
-    this.setTerminals(this._terminals$.getValue().map(i => {
-      if (i?.id === id) {
-        i.minimized = true;
-      }
-      return i;
-    }));
-  }
-
   full(id: number): void {
     this.setTerminals(this._terminals$.getValue().map(i => {
       if (i?.id === id) {
@@ -104,6 +103,15 @@ export class TerminalComponent implements OnInit {
     this.setTerminals(this._terminals$.getValue().map(i => {
       if (i?.id === id) {
         i.minimized = false;
+      }
+      return i;
+    }));
+  }
+
+  minimize(id: number): void {
+    this.setTerminals(this._terminals$.getValue().map(i => {
+      if (i?.id === id) {
+        i.minimized = true;
       }
       return i;
     }));

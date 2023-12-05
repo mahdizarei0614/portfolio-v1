@@ -1,24 +1,34 @@
-import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  Inject,
+  PLATFORM_ID
+} from '@angular/core';
+import { isPlatformBrowser, NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-folded-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    NgClass,
+    NgStyle
+  ],
   templateUrl: './folded-page.component.html',
-  styleUrl: './folded-page.component.scss'
+  styleUrl: './folded-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FoldedPageComponent implements AfterViewInit {
-  platformId!: object;
   foldedHover = false;
   initiated = false;
+  platformId!: object;
+  showMyWork = false;
 
   constructor(@Inject(PLATFORM_ID) platformId: object) {
     if (isPlatformBrowser(platformId)) {
       this.platformId = platformId;
     }
   }
-  showMyWork = false;
 
   public ngAfterViewInit() {
     if (this.platformId) {

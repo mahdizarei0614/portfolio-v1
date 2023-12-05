@@ -3,45 +3,85 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  EventEmitter, HostBinding,
+  EventEmitter,
+  HostBinding,
   inject,
   Inject,
   Input,
   Output,
   PLATFORM_ID
 } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgStyle } from '@angular/common';
 import { ResizableModule, ResizeEvent } from 'angular-resizable-element';
 
 @Component({
   selector: 'app-terminal-instance',
   standalone: true,
-  imports: [CommonModule, ResizableModule],
+  imports: [ResizableModule, NgStyle],
   templateUrl: './terminal-instance.component.html',
   styleUrl: './terminal-instance.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TerminalInstanceComponent implements AfterViewInit {
-  @HostBinding('class') get className() { return 'block' }
   private _cdr = inject(ChangeDetectorRef);
   TerminalMessageType = TerminalMessageType;
   @Output() closeTerminal = new EventEmitter();
-  commands = [
+  commands: {
+    text: string,
+    response: {
+      text: string,
+      breakLines?: number,
+      classes?: string
+    }[]
+  }[] = [
     {
       text: 'mz help',
       response: [
-        'commands list:',
-        'mz help (commands list)',
-        'mz bio (my biography)'
+        {
+          text: 'mz < command >',
+          breakLines: 2
+        },
+        {
+          text: 'Commands:',
+          classes: 'text-blue-500'
+        },
+        {
+          text: 'mz bio My Biography'
+        }
+      ]
+    },
+    {
+      text: 'mz bio',
+      response: [
+        {
+          text: 'Progressive Senior Web Engineer with 5+ years of experience designing, enhancing, and maintaining 15+ websites, primarily progressive web applications, mainly using Angular and Ionic at Dotin Corporation, one of the top 3 companies in the banking industry of Iran, Karafarin\'s Negah Bank, OMPFinex cryptocurrency exchange, and a startup in London named Elpida. Proficient in applying the Domain-Driven Design pattern (DDD) and implementing server-side rendering (SSR), incremental server-side rendering (ISR), and static site generation (SSG) techniques.',
+          classes: 'text-blue-300'
+        }
       ]
     }
-  ];
+  ].map(i => {
+    i.response = i.response.map(j => {
+      j.classes = j.classes ?? 'text-white'
+      return j;
+    });
+    return i;
+  });
+  _recentCommands: string[] = []
   enteringCommand = '';
+  @Output() fullTerminal = new EventEmitter();
   @Output() maximizeTerminal = new EventEmitter();
   @Output() minimizeTerminal = new EventEmitter();
-  @Output() fullTerminal = new EventEmitter();
   platformId!: object;
   @Input() terminal!: Terminal;
+  recentCommandIndex = -1
+
+  get recentCommands(): string[] {
+    return this._recentCommands.reverse();
+  }
+
+  @HostBinding('class') get className() {
+    return 'block';
+  }
 
   constructor(@Inject(PLATFORM_ID) platformId: object) {
     if (isPlatformBrowser(platformId)) {
@@ -58,6 +98,7 @@ export class TerminalInstanceComponent implements AfterViewInit {
   }
 
   command() {
+    this._recentCommands.push(this.enteringCommand);
     this.terminal.commands.push({
       type: TerminalMessageType.Input,
       id: '' + Math.random(),
@@ -68,12 +109,13 @@ export class TerminalInstanceComponent implements AfterViewInit {
       this.terminal.commands.push({
         type: TerminalMessageType.Response,
         id: '' + Math.random(),
-        html: command.response.map(i => `<span class="text-white">${i}</span><br/>`).join('')
+        html: command.response.map(i => `<span${i.classes ? ' class="' + i.classes + '"' : ''}>${i.text}</span>${Array(i.breakLines ?? 1).fill(``).map(() => `<br/>`).join('')}`).join('')
       });
     } else {
       this.terminal.commands.push({
         type: TerminalMessageType.Error,
-        id: '' + Math.random()
+        id: '' + Math.random(),
+        text: '' + this.enteringCommand
       });
     }
     this.enteringCommand = '';
@@ -100,17 +142,26 @@ export class TerminalInstanceComponent implements AfterViewInit {
     }
     this._cdr.markForCheck();
   }
+
+  pervCommand() {
+    // if (recentCommandIndex === this._recentCommands.length - 1) {return}
+    this.recentCommandIndex += 1;
+  }
+  nextCommand() {
+    // if (recentCommandIndex === -1) {return}
+    this.recentCommandIndex -= 1;
+  }
 }
 
 export interface Terminal {
   commands: TerminalMessage[];
+  full: boolean;
+  height: number;
   id: number;
   minimized: boolean;
-  full: boolean;
+  width: number;
   x: number;
   y: number;
-  width: number;
-  height: number;
 }
 
 enum TerminalMessageType {
@@ -120,6 +171,7 @@ enum TerminalMessageType {
 }
 
 interface TerminalError extends TerminalMessageBase {
+  text: string;
   type: TerminalMessageType.Error;
 }
 

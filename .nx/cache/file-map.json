@@ -12,6 +12,7 @@
     "@angular/platform-server": "^17.0.4",
     "@angular/router": "^17.0.4",
     "@angular/ssr": "^17.0.2",
+    "angular-resizable-element": "^7.0.2",
     "express": "^4.18.2",
     "flowbite": "^1.6.4",
     "rxjs": "~7.8.0",
@@ -67,7 +68,7 @@
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "1374664365339148013"
+        "hash": "9598350973839802829"
       },
       {
         "file": ".nx/cache/lockfile.hash",
@@ -102,8 +103,12 @@
         "hash": "10018103031648379828"
       },
       {
+        "file": "package-lock.json",
+        "hash": "13821149727104517301"
+      },
+      {
         "file": "package.json",
-        "hash": "16522202729013566965"
+        "hash": "3589643420464504032"
       },
       {
         "file": "routes.txt",
@@ -171,7 +176,7 @@
       },
       {
         "file": "src/app/home/brief/brief.component.html",
-        "hash": "7441435456982782384"
+        "hash": "17284805308823280930"
       },
       {
         "file": "src/app/home/brief/brief.component.scss",
@@ -183,7 +188,7 @@
       },
       {
         "file": "src/app/home/brief/brief.component.ts",
-        "hash": "12054261714565325254"
+        "hash": "6667833463541025878"
       },
       {
         "file": "src/app/home/clock/clock.component.html",
@@ -203,11 +208,11 @@
       },
       {
         "file": "src/app/home/folded-page/folded-page.component.html",
-        "hash": "17903785726616598160"
+        "hash": "4799873820155571919"
       },
       {
         "file": "src/app/home/folded-page/folded-page.component.scss",
-        "hash": "13755426297140248405"
+        "hash": "5690294235226517116"
       },
       {
         "file": "src/app/home/folded-page/folded-page.component.spec.ts",
@@ -403,11 +408,11 @@
       },
       {
         "file": "src/app/home/terminal/terminal-instance/terminal-instance.component.html",
-        "hash": "820775153501760491"
+        "hash": "15011790557368749822"
       },
       {
         "file": "src/app/home/terminal/terminal-instance/terminal-instance.component.scss",
-        "hash": "3244421341483603138"
+        "hash": "11076566486600056716"
       },
       {
         "file": "src/app/home/terminal/terminal-instance/terminal-instance.component.spec.ts",
@@ -415,11 +420,11 @@
       },
       {
         "file": "src/app/home/terminal/terminal-instance/terminal-instance.component.ts",
-        "hash": "720187412102876296"
+        "hash": "12592025470520429677"
       },
       {
         "file": "src/app/home/terminal/terminal.component.html",
-        "hash": "12736920012461046346"
+        "hash": "16244027525331406628"
       },
       {
         "file": "src/app/home/terminal/terminal.component.scss",
@@ -431,7 +436,7 @@
       },
       {
         "file": "src/app/home/terminal/terminal.component.ts",
-        "hash": "9877793175641881763"
+        "hash": "2930344901630560319"
       },
       {
         "file": "src/assets/.gitkeep",
@@ -579,7 +584,7 @@
       },
       {
         "file": "src/index.html",
-        "hash": "11642278932042970223"
+        "hash": "614133509833819387"
       },
       {
         "file": "src/main.server.ts",
@@ -595,7 +600,7 @@
       },
       {
         "file": "src/styles.scss",
-        "hash": "1324125192636036324"
+        "hash": "8740579113801699788"
       },
       {
         "file": "src/styless.scss",
@@ -623,7 +628,7 @@
       },
       {
         "file": "yarn.lock",
-        "hash": "16198716893802194976"
+        "hash": "749011000878826309"
       }
     ]
   }
