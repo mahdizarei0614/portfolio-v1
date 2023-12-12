@@ -73,7 +73,6 @@
     <div class="fixed bottom-2 left-1/2 -translate-x-1/2 z-10 text-slate-400 bold text-xl name whitespace-nowrap">Press Ctrl + Alt + Z</div>
     <div class="glass-effect absolute w-full h-full z-0 right-0 bottom-0"></div>
 </div>
-<app-folded-page></app-folded-page>
 @if (openedTerminal) {
     <app-terminal (terminate)="openedTerminal = false; newTerminal = 0" [addNewTerminal]="newTerminal"></app-terminal>
 }

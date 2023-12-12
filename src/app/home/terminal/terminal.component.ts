@@ -1,7 +1,7 @@
 import {
-  ChangeDetectionStrategy,
+  ChangeDetectionStrategy, ChangeDetectorRef,
   Component,
-  EventEmitter,
+  EventEmitter, inject,
   Input,
   OnInit,
   Output
@@ -22,6 +22,7 @@ import { AsyncPipe } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TerminalComponent implements OnInit {
+  private _cdr = inject(ChangeDetectorRef);
   _terminals$: BehaviorSubject<TerminalCell[]> = new BehaviorSubject<TerminalCell[]>([]);
   @Output() newTerminalAdded = new EventEmitter<void>();
   @Output() terminate = new EventEmitter();
@@ -61,10 +62,14 @@ export class TerminalComponent implements OnInit {
 
   private setTerminals(terminals: TerminalCell[]) {
     this._terminals$.next(terminals);
+    this._cdr.detectChanges();
   }
 
   add(): void {
-    const terminals = this._terminals$.getValue();
+    const terminals = this._terminals$.getValue().map(t => {
+      if (t) t.active = false
+      return t;
+    });
     const firstAvailableIndex = this.firstAvailableIndex;
     terminals[firstAvailableIndex] = {
       id: this.firstLastAvailableTerminalId,
@@ -73,6 +78,7 @@ export class TerminalComponent implements OnInit {
       width: 800,
       height: 500,
       minimized: false,
+      active: true,
       full: false,
       commands: []
     };
@@ -116,6 +122,15 @@ export class TerminalComponent implements OnInit {
       return i;
     }));
   }
+  activeTerminal(id: number) {
+    const terminals = this._terminals$.getValue().map(t => {
+      if (t) t.active = false;
+      if (t && t.id === id) t.active = true;
+      return t;
+    });
+    this.setTerminals(terminals);
+  }
+
 }
 
 type TerminalCell = Terminal | undefined;

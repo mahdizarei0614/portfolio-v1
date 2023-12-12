@@ -1,12 +1,16 @@
 @for (t of terminals | async;track t) {
     @if (t) {
-        <app-terminal-instance [terminal]="t" (closeTerminal)="close($event)" (minimizeTerminal)="minimize($event)" (fullTerminal)="full($event)"></app-terminal-instance>
+        <app-terminal-instance style="z-index: {{t.active ? 1000 : 'auto'}}" [terminal]="t"
+                               (closeTerminal)="close($event)" (minimizeTerminal)="minimize($event)"
+                               (fullTerminal)="full($event)"
+                               (mousedown)="activeTerminal(t.id)"></app-terminal-instance>
     }
 }
 <div class="absolute left-1/2 -translate-x-1/2 bottom-0 w-[calc(100%-16rem)] flex gap-2 overflow-x-auto">
     @for (t of terminalsMinimized | async;track t) {
         @if (t) {
-            <app-terminal-instance [terminal]="t" (closeTerminal)="close($event)" (maximizeTerminal)="maximize($event)"></app-terminal-instance>
+            <app-terminal-instance [terminal]="t" (closeTerminal)="close($event)"
+                                   (maximizeTerminal)="maximize($event)"></app-terminal-instance>
         }
     }
 </div>
