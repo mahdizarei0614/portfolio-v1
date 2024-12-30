@@ -6,6 +6,7 @@
     "start": "ng serve",
     "start:ompfinex": "ng serve -c ompfinex",
     "build": "ng build -c production",
+    "build:ci": "ng build -c production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint --fix --quiet",
