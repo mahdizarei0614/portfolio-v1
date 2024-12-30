@@ -4,7 +4,7 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   Inject,
   OnInit,
-  PLATFORM_ID
+  PLATFORM_ID,
 } from '@angular/core';
 import { ClockComponent } from '../clock/clock.component';
 import { isPlatformBrowser, NgClass, NgOptimizedImage, NgStyle } from '@angular/common';
@@ -19,12 +19,12 @@ import { debounce, fromEvent, map, merge, Observable, timer } from 'rxjs';
   standalone: true,
   imports: [ClockComponent, NgOptimizedImage, NgClass, NgStyle, FoldedPageComponent, TerminalComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BriefComponent implements OnInit {
   public myName = [...'Mahdi'.split(''), '&nbsp;', ...'Zarei'.split('')].map((i) => ({
     letter: i,
-    color: 'unset'
+    color: 'unset',
   }));
   newTerminal = 0;
   openedTerminal = false;
@@ -45,12 +45,12 @@ export class BriefComponent implements OnInit {
   private bindKeypressEvent(): Observable<KeyboardEvent> {
     const eventsType$ = [
       fromEvent(window, 'keypress'),
-      fromEvent(window, 'keydown')
+      fromEvent(window, 'keydown'),
     ];
     return merge(...eventsType$)
       .pipe(
         debounce(() => timer(10)),
-        map(state => (state as KeyboardEvent))
+        map(state => (state as KeyboardEvent)),
       );
   }
 
@@ -87,5 +87,9 @@ export class BriefComponent implements OnInit {
         this.myName[index].color = 'unset';
       }, 300);
     }
+  }
+
+  openTerminal() {
+    this.openedTerminal = true;
   }
 }
